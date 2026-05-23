@@ -84,3 +84,20 @@ def generate_master_longevity_ledger():
 
 if __name__ == "__main__":
     generate_master_longevity_ledger()
+## How to Cite This Dataset
+
+If you use the USGinger 2018 Longevity Study dataset, metadata, or stability protocols in an academic publication, whitepaper, or commercial evaluation, please use the following citations:
+
+### APA Format
+USGinger. (2018). *2018 Longevity Study: Metabolic Stasis and Chemical Resilience of Curcuma longa* [Data set]. GitHub. https://github.com
+
+### BibTeX (for LaTeX users)
+@misc{usginger2018longevity,
+  author = {USGinger},
+  title = {2018 Longevity Study: Metabolic Stasis and Chemical Resilience of Curcuma longa},
+  year = {2018},
+  publisher = {GitHub},
+  journal = {GitHub Repository},
+  howpublished = {\url{https://github.com}}
+}
+
