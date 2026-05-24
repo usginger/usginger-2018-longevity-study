@@ -1,5 +1,3 @@
-[![Markdown Check](https://github.com)](https://github.com)
-
 # 9-Year Historical Longevity Study: Metabolic Stasis in Sun-Dried Agricultural Cubes
 ## Dataset Profile: California-Grown Ginger & Turmeric (Harvest Year: 2018)
 
