@@ -4,9 +4,10 @@ This dataset is published under the **USGinger Restrictive Non-Commercial Resear
 
 ### Preferred Citation
 
-**USGinger Research Group** (2026). *USGinger 2018–2026 Longevity Study: 9-Year Metabolic Stasis of Sun-Dried Turmeric and Ginger Rhizomes (Merced Harvest 2018)*. COA #USG-2018Q5L2. GitHub repository. https://github.com/usginger/usginger-2018-longevity-study
+**USGinger Research Group** (2026). *USGinger 2018–2026 Longevity Study: 9-Year Metabolic Stasis of Sun-Dried Turmeric and Ginger Rhizomes (Merced Harvest 2018)*.  
+COA #USG-2018Q5L2. GitHub repository. https://github.com/usginger/usginger-2018-longevity-study
 
-### BibTeX (for LaTeX / academic tools)
+### BibTeX
 
 ```bibtex
 @misc{usginger_2026_longevity,
