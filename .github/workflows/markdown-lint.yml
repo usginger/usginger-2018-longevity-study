@@ -1,0 +1,22 @@
+name: Markdown Linting & Error Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  markdown-error-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Download your repository files into the runner environment
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+
+    # Step 2: Automatically check all markdown (.md) documents for formatting bugs
+    - name: Lint Markdown Files
+      uses: davidanson/markdownlint-cli2-action@v16
+      with:
+        globs: '**/*.md'
