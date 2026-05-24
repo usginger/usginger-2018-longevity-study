@@ -1,3 +1,12 @@
+## 📄 Commercial Licensing & Reference Samples
+
+This repository contains the public-facing data framework for our research. Commercial utilization, formulation development, and physical replication require a commercial license agreement.
+
+* **Full Certificate of Analysis:** Access the unredacted COA (**#usg-2018q5l2**).
+* **Physical Reference Material:** Request 5g to 10g testing aliquots of archived **2018 Merced Turmeric Roots** for HPLC validation.
+
+👉 **[Review the Commercial Licensing & Material Request Guidelines Here](LICENSING.md)**
+
 # Commercial Licensing & Material Request Guidelines
 
 Thank you for your interest in the **2018 Longevity Study** data and associated material assets. This repository contains the public-facing framework of our research. Commercial utilization, formulation development, and physical replication require a commercial license agreement.
