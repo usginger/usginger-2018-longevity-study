@@ -15,4 +15,8 @@ This dataset is published under the **USGinger Restrictive Non-Commercial Resear
   year         = {2026},
   note         = {Dataset and COA \#USG-2018Q5L2 available at https://github.com/usginger/usginger-2018-longevity-study},
   url          = {https://github.com/usginger/usginger-2018-longevity-study}
+## How to Cite
+
+See **[HOW_TO_CITE.md](HOW_TO_CITE.md)** for the official citation format, preferred reference, BibTeX, and quick rules.
+
 }     
