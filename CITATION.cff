@@ -1,18 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this dataset in your research, please cite it as below."
-title: "USGinger 2018–2026 Longevity Study: 9-Year Metabolic Stasis of Sun-Dried Turmeric and Ginger Rhizomes (Merced Harvest 2018)"
+message: "If you use this dataset or reference material, please cite it as below."
 authors:
-  - name: "USGinger Research Group"
-year: "2026"
-doi: ""  # leave blank for now or add later if you get a DOI
-url: "https://github.com/usginger/usginger-2018-longevity-study"
-repository-code: "https://github.com/usginger/usginger-2018-longevity-study"
-license: "other"  # matches your restrictive R&D license
-keywords:
-  - turmeric
-  - ginger
-  - curcuminoids
-  - longevity
-  - metabolic-stasis
-  - stability-study
-  - COA-USG-2018Q5L2
+  - name: "usginger"
+title: "2018 Longevity Study: Phytochemical Profiling, Data Asset #usg-2018q5l2, and Archived Merced Turmeric Root Reference Samples"
+type: dataset
+date-released: 2018-01-01
+url: "[https://github.com/usginger/usginger-2018-longevity-study]"
