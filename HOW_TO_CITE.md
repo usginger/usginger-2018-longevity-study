@@ -1,19 +1,5 @@
-# How to Cite
+## 📑 How to Cite This Study
 
-This dataset is published under the **USGinger Restrictive Non-Commercial Research License (R&D-Only)** and is freely available for non-commercial research, developmental validation, and academic review.
+If you utilize this dataset, referencing protocols, or compound profiles in an academic publication, commercial whitepaper, or formulation review, please use the following citation:
 
-### Preferred Citation
-
-**USGinger Research Group** (2026). *USGinger 2018–2026 Longevity Study: 9-Year Metabolic Stasis of Sun-Dried Turmeric and Ginger Rhizomes (Merced Harvest 2018)*.  
-COA #USG-2018Q5L2. GitHub repository. https://github.com/usginger/usginger-2018-longevity-study
-
-### BibTeX (for LaTeX / academic tools)
-
-```bibtex
-@misc{usginger_2026_longevity,
-  author       = {USGinger Research Group},
-  title        = {USGinger 2018--2026 Longevity Study: 9-Year Metabolic Stasis of Sun-Dried Turmeric and Ginger Rhizomes (Merced Harvest 2018)},
-  year         = {2026},
-  note         = {Dataset and COA \#USG-2018Q5L2 available at https://github.com/usginger/usginger-2018-longevity-study},
-  url          = {https://github.com/usginger/usginger-2018-longevity-study}
-}
+> usginger. (2018). *2018 Longevity Study: Phytochemical Profiling, Data Asset #usg-2018q5l2, and Archived Merced Turmeric Root Reference Samples* [Data set]. GitHub. [https://github.com/usginger/usginger-2018-longevity-study]
