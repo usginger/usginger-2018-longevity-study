@@ -39,3 +39,18 @@ To permanently satisfy enterprise data provenance standards, the data architectu
 * 
 | **Verified Side-by-Side COA Profile** <br>Official NIST vs. USGinger Laboratory Metrics | [**📜 View Verified COA**](https://githubusercontent.com) | `Click to open authenticated results layout` |
 
+## 📁 Repository Structure
+```text
+├── data/               # Raw and processed laboratory CSV/JSON files
+│   ├── chemical/       # Curcuminoid and compound tracking profiles
+│   └── environmental/  # Moisture, temperature, and storage logs
+├── protocols/          # Step-by-step 8-Year Stasis Protocol documentation
+├── scripts/            # Python/R scripts for data parsing and visualization
+├── CONTRIBUTING.md     # Guidelines for data contributors and scientists
+└── LICENSE             # Repository license
+```
+
+## 🤝 How to Contribute
+We welcome data scientists, botanists, and pharmaceutical researchers. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide to help us parse data, build visualizations, or refine code templates.
+
+
