@@ -23,6 +23,6 @@ Using these 2.1% moisture stasis baselines to back commercial marketing claims f
 4. RETROACTIVE LIABILITY & WAIVER EXCLUSION
 This Data tracks a historical 2018 harvest lot. Pursuant to California Commercial Code Section 2725, all civil commercial trade rules and retail warranties are fully expired and legally unenforceable. The data is provided "as-is" for longitudinal scientific tracking.
 
-5. TERMINATION
+1. TERMINATION
 Any use of the Data that violates the commercial restrictions outlined in Section 3 will instantly terminate this license and your rights to hold or process the data, and may subject the violating party to civil intellectual property litigation.
 
