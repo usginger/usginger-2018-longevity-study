@@ -26,3 +26,14 @@ This Data tracks a historical 2018 harvest lot. Pursuant to California Commercia
 1. TERMINATION
 Any use of the Data that violates the commercial restrictions outlined in Section 3 will instantly terminate this license and your rights to hold or process the data, and may subject the violating party to civil intellectual property litigation.
 
+## Laboratory Verification Metrics
+
+
+| Parameter | Certified Analysis Value | Status |
+| :--- | :--- | :--- |
+| **Heavy Metals (Lead)** | ~0.323 ppb | Ultra-Low / Pass |
+| **Moisture Content** | 2.1% | Stabilized / Pass |
+| **Irradiation / Solvents** | None Detected | Pure / Pass |
+| **Preservation Protocol** | Metabolic Stasis | Verified 9 Years |
+
+
