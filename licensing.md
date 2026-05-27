@@ -38,7 +38,12 @@ In your inquiry, please include:
 1. **Institutional Affiliation:** Corporate name, academic institution, or investment group.
 2. **Contact Credentials:** Request must originate from an official corporate/institutional domain email address.
 3. **Intent of Use:** Brief summary of evaluation goals (e.g., anti-aging formulation, bioavailability testing, comparative HPLC analysis).
+4. Submit an Official Request** (Email to sales@usginger.com...)
+5. Document Execution** (Mutual NDA/MTA via DocuSign...)
+6. ispatch of Assets** (Digital link delivered in 48 hours / Physical sample packed...)
 
+### Commercial Contact
+For urgent licensing inquiries... Please contact the principal management team directly...
 ### Step 2: Document Execution
 Upon initial vetting, our team will supply a standard, mutual NDA/MTA. 
 
