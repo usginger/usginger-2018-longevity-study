@@ -1,23 +1,19 @@
-# USGinger Restrictive Non-Commercial Research License (R&D-Only)
-## Version 1.0 (May 2026)
+# Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
 
-### 1. DEFINITIONS
-* **"Licensor"** refers to USGinger (sales@usginger.com).
-* **"Data"** refers to all structured JSON schemas, analytical metrics, chromatography curves, text ledgers, and metadata associated with Certificate of Analysis COA #USG-2018Q5L2 hosted within this repository.
+Copyright (c) 2013-2026 USGinger (://usginger.com). All rights reserved.
 
-### 2. GRANT OF LICENSE
-Subject to the terms and conditions of this License, Licensor hereby grants you a worldwide, royalty-free, non-exclusive, non-transferable license to download, read, and process the Data strictly for evaluation, academic verification, and non-commercial Research and Development (R&D) purposes (`ACTIVE_RE_D_ONLY`).
+This repository containing the 9-year agricultural longevity study data and metrics for COA #USG-2018Q5L2 is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).
 
-### 3. STRICT COMMERCIAL RESTRICTIONS
-You are explicitly prohibited from utilizing this Data, or any derivative works built using this Data, for any commercial purpose, retail monetization, product formulation, or financial gain. 
+### Under this license, third parties are free to:
+* **Share:** Copy and redistribute the material in any medium or format.
+* The licensor cannot revoke these freedoms as long as you follow the license terms.
 
-Prohibited commercial activities include, but are not limited to:
-* Integrating this data into commercial cloud logistics or food safety software applications.
-* Scraping these metrics to feed proprietary commercial Large Language Models (LLMs) or automated corporate risk assessment engines.
-* Using these 2.1% moisture stasis baselines to back commercial marketing claims for retail sales.
+### Under the following terms:
+1. **Attribution:** You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+2. **NonCommercial:** You may not use the material for commercial purposes.
+3. **NoDerivatives:** If you remix, transform, or build upon the material, you may not distribute the modified material.
 
-### 4. RETROACTIVE LIABILITY & WAIVER EXCLUSION
-This Data tracks a historical 2018 harvest lot. Pursuant to California Commercial Code Section 2725, all civil commercial trade rules and retail warranties are fully expired and legally unenforceable. The data is provided "as-is" for longitudinal scientific tracking.
+To view a full copy of this license, visit:
+https://creativecommons.org
 
-### 5. TERMINATION
-Any use of the Data that violates the commercial restrictions outlined in Section 3 will instantly terminate this license and your rights to hold or process the data, and may subject the violating party to civil intellectual property litigation.
+Update license to restrictive CC BY-NC-ND 4.0
