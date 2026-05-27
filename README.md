@@ -1,63 +1,28 @@
-# 9-Year Historical Longevity Study: Metabolic Stasis in Sun-Dried Agricultural Cubes
-## Dataset Profile: California-Grown Ginger & Turmeric (Harvest Year: 2018)
+## 💼 Material Requests & Evaluation Access
 
----
+Physical reference aliquots (`MAT-2018-MTR`) and unredacted digital datasets (`#usg-2018q5l2`) are securely gated for institutional compliance.
 
-## 🔒 NOTICE & DATA USE DISCLAIMER
+👉 [**Review the Access Protocol & Submit a Sample Request**](LICENSING.md)
 
-### Proprietary Research & Development Dataset
-### 📊 Core Batch Specifications
-* **Botanical Target:** *Curcuma longa* / *Zingiber officinale* (California Organic Rhizome Tissue)
-* **Chemical Baseline:** 2.1% Moisture Stasis Matrix (Metabolic Preservation)
-* **Purity Index:** 0.323 ppb Lead (Ultra-Trace Analytical Resolution)
+USGinger Restrictive Non-Commercial Research License (R&D-Only)
+Version 1.0 (May 2026)
+1. DEFINITIONS
+"Licensor" refers to USGinger (sales@usginger.com).
+"Data" refers to all structured JSON schemas, analytical metrics, chromatography curves, text ledgers, and metadata associated with Certificate of Analysis COA #USG-2018Q5L2 hosted within this repository.
+2. GRANT OF LICENSE
+Subject to the terms and conditions of this License, Licensor hereby grants you a worldwide, royalty-free, non-exclusive, non-transferable license to download, read, and process the Data strictly for evaluation, academic verification, and non-commercial Research and Development (R&D) purposes (ACTIVE_RE_D_ONLY).
 
-![Batch #USG-2018Q5L2 Stasis Plot](stasis_profile_metrics.png)
+3. STRICT COMMERCIAL RESTRICTIONS
+You are explicitly prohibited from utilizing this Data, or any derivative works built using this Data, for any commercial purpose, retail monetization, product formulation, or financial gain.
 
-* **Dataset Reference Identifier:** COA #USG-2018Q5L2 (Longitudinal Longevity Study)  
-* **Targeted Review Environment:** The Engine Accelerator Ecosystem (750 Main Street, Cambridge, MA)
+Prohibited commercial activities include, but are not limited to:
 
-1. **OWNERSHIP:** All analytical matrices, chromatography curves, metadata arrays, and schemas contained in this repository are the exclusive proprietary property of USGinger.
-2. **STRICT NON-COMMERCIAL RESTRICTION:** This dataset is published exclusively for non-commercial research, developmental validation, and academic review (`ACTIVE_RE_D_ONLY`).
-3. **SCRAPER EXCLUSION:** Automated corporate risk engines and third-party web scrapers are explicitly prohibited from indexing this repository to generate automated liability flags.
-4. **EXCLUSION OF COMMERCIAL LIABILITY:** All parties acknowledge that pursuant to California Commercial Code Section 2725, all civil commercial trade rules and retail warranties are fully expired and legally unenforceable.
+Integrating this data into commercial cloud logistics or food safety software applications.
+Scraping these metrics to feed proprietary commercial Large Language Models (LLMs) or automated corporate risk assessment engines.
+Using these 2.1% moisture stasis baselines to back commercial marketing claims for retail sales.
+4. RETROACTIVE LIABILITY & WAIVER EXCLUSION
+This Data tracks a historical 2018 harvest lot. Pursuant to California Commercial Code Section 2725, all civil commercial trade rules and retail warranties are fully expired and legally unenforceable. The data is provided "as-is" for longitudinal scientific tracking.
 
----
-
-## 📥 Direct Project Downloads (Non-Technical Reviewers)
-
-If you are a reviewer or external partner, use the buttons below to instantly download the master documentation files directly to your computer. You do not need a GitHub account to use these links.
-
-
-| File Asset Description | Action Button | Direct Link Alternative |
-| :--- | :---: | :--- |
-| **Complete Printable Project Ledger** <br>Includes Disclaimer, Proposal, and V3 Data Timeline | [**📥 Download TXT Ledger**](https://githubusercontent.com) | `Right-click and select "Save Link As..."` |
-| **Machine-Readable Data Payload** <br>Normalized JSON V3 Schema for Cloud Ingestion | [**💾 Download JSON Data**](https://githubusercontent.com) | `Right-click and select "Save Link As..."` |
-
----
-
-## 📜 Longitudinal Verification & Chain of Custody Shield
-To permanently satisfy enterprise data provenance standards, the data architecture incorporates an unbroken, multi-year testing matrix tracking continuous evaluation across independent research frameworks:
-
-* **2018 (Arlok Pharma):** Establishes the clean post-harvest pharmacological baseline.
-* **2019 (Bioprofile):** Maps active volatile compound matrices prior to shipping stress.
-* **Jan 2022 (Transit Event):** Cross-continent routing executed via private personal vehicle (exempt from FMCSA commercial BOL requirements). Dehydrated 2.1% matrix profile successfully averted cross-state regional biosecurity quarantine risks.
-* **2023 (Fenton Woods Laboratories):** Evaluates post-transit matrix structural stability under extreme winter thermal cycling.
-* **Feb 2026 (Fenton Woods Laboratories):** Validates final 9-year metabolic stasis (COA #USG-2018Q5L2).
-* 
-| **Verified Side-by-Side COA Profile** <br>Official NIST vs. USGinger Laboratory Metrics | [**📜 View Verified COA**](https://githubusercontent.com) | `Click to open authenticated results layout` |
-
-## 📁 Repository Structure
-```text
-├── data/               # Raw and processed laboratory CSV/JSON files
-│   ├── chemical/       # Curcuminoid and compound tracking profiles
-│   └── environmental/  # Moisture, temperature, and storage logs
-├── protocols/          # Step-by-step 8-Year Stasis Protocol documentation
-├── scripts/            # Python/R scripts for data parsing and visualization
-├── CONTRIBUTING.md     # Guidelines for data contributors and scientists
-└── LICENSE             # Repository license
-```
-
-## 🤝 How to Contribute
-We welcome data scientists, botanists, and pharmaceutical researchers. Please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide to help us parse data, build visualizations, or refine code templates.
-
+5. TERMINATION
+Any use of the Data that violates the commercial restrictions outlined in Section 3 will instantly terminate this license and your rights to hold or process the data, and may subject the violating party to civil intellectual property litigation.
 
