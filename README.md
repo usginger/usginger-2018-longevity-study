@@ -6,6 +6,13 @@
 ## 🔒 NOTICE & DATA USE DISCLAIMER
 
 ### Proprietary Research & Development Dataset
+### 📊 Core Batch Specifications
+* **Botanical Target:** *Curcuma longa* / *Zingiber officinale* (California Organic Rhizome Tissue)
+* **Chemical Baseline:** 2.1% Moisture Stasis Matrix (Metabolic Preservation)
+* **Purity Index:** 0.323 ppb Lead (Ultra-Trace Analytical Resolution)
+
+![Batch #USG-2018Q5L2 Stasis Plot](stasis_profile_metrics.png)
+
 * **Dataset Reference Identifier:** COA #USG-2018Q5L2 (Longitudinal Longevity Study)  
 * **Targeted Review Environment:** The Engine Accelerator Ecosystem (750 Main Street, Cambridge, MA)
 
