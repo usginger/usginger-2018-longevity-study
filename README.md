@@ -36,4 +36,6 @@ Any use of the Data that violates the commercial restrictions outlined in Sectio
 | **Irradiation / Solvents** | None Detected | Pure / Pass |
 | **Preservation Protocol** | Metabolic Stasis | Verified 9 Years |
 
+![Handmade Ginger Candy](ginger-candy.jpg)
+
 
