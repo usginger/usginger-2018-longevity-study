@@ -1,4 +1,6 @@
-# These are your supported funding platforms
+# .github/FUNDING.yml
 
 github: [usginger]
-custom: ['https://usginger.com']
+patreon: your_patreon_username
+ko_fi: your_kofi_username
+custom: ["https://paypal.me", "https://your-custom-site.com"]
