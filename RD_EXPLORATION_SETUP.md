@@ -1,5 +1,5 @@
 # 🔬 USGinger 2018 Turmeric Cubes: R&D Exploration Protocol
-### Lot / COA Reference: `#USG-2018Q5L2`
+## Lot / COA Reference: `#USG-2018Q5L2`
 
 Welcome to the official Research and Development (R&D) data and sample exploration portal for USGinger's 2018 sun-dried turmeric root cubes. 
 
