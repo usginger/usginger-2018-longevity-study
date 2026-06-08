@@ -44,4 +44,16 @@ Any use of the Data that violates the commercial restrictions outlined in Sectio
 
 ![Handmade Ginger Candy](ginger-candy.jpg)
 
+# USGinger 2018 Longevity Study
+This repository contains the 9-year historical longevity logs and data for sun-dried curcumin cubes (COA #USG-2018Q5L2).
+
+## The Longevity Mechanism
+The exceptional 9-year stability logged in this study is the direct result of a specialized microclimate curing process. By combining the natural atmospheric sponge of a 105-foot elevation pocket in Walnut Creek, CA, during the Xiazhi and Dashu solar terms, with rigorous manual raking, the raw agricultural cubes achieved complete tissue vitrification. 
+
+For full details on the environmental parameters and drying physics, see [PROCESS.md](./PROCESS.md).
+
+## Study Data & Logs
+[...Your existing repository data, file links, and charts go here...]
+
+
 
