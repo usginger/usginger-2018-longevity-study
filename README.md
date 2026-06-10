@@ -70,6 +70,21 @@ All data streams and physical reference samples are provided strictly for resear
 
 👉 **To review the full Commercial Licensing Guidelines or request access, email your R&D credentials to: licensing@usginger.com**
 
+## 📊 Commercial R&D Data Licensing & Material Requests
+
+This repository contains the public-facing data framework for our research. Commercial utilization, formulation development, computational modeling, and physical replication require a commercial license agreement. By structuring our 9-year historical dataset into tiers, we support both open science and enterprise-level AI health research.
+
+### Data Access Tiers & Material Pricing
+
+* Tier 1: Open Science Sandbox (Free / Public). Included: Basic 9-year milestone summaries, high-level dataset frameworks, and open-source documentation. Permitted Use: Academic review and open-source model testing only. No commercial use. Access: Available directly via this GitHub repository.
+
+* Tier 2: Full Vault & Reference Material (Premium R&D Asset). Included: Full, unredacted Certificate of Analysis (COA #usg-2018q5l2) from Fenton Wood Labs, including multi-variable chemical breakdowns, trace element stability logs (0.323 ppb lead baseline), and structured 9-year time-series data tables. Physical Reference Material: Request 5g to 10g testing aliquots of archived 2018 Merced Turmeric Roots for HPLC validation. Access: [👉 Click Here to Purchase the Full Dataset on the Official USGinger Store](PASTE_YOUR_WIX_PRODUCT_URL_HERE)
+
+### ⚠️ Liability & Legal Notice (R&D Only)
+All data streams and physical reference samples are provided strictly for research and development (R&D) purposes only. USGinger does not market consumer-facing physical products, retail raw rhizomes, or clinical health advice. Licensing fees and material requests grant access to historical biological data and archival reference assets only.
+
+👉 **To review full Commercial Licensing Guidelines or request custom data setups, email your R&D credentials to: sales@usginger.com**
+
 
 
 
