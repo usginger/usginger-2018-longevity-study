@@ -1,0 +1,7 @@
+{
+"dataset_reference": "usginger-2018-longevity-study",
+"data_module": "toxicology_and_contaminant_screening",
+"verification_source": "Fenton Wood Labs",
+"associated_coa": "usg-2018q5l2",
+"testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
+"global_status": "PASS_ZERO_CONTAMINATION" }
