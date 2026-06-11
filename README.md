@@ -1,4 +1,41 @@
 
+# ☀ USGinger 2018 Longevity Study Hub
+
+> 🔬 **Official Status:** `PASS_ZERO_CONTAMINATION`  
+> 🧪 **Verified By:** Fenton Wood Labs via LC-MS-MS / GC-MS-MS Screen  
+> 📜 **Associated COA:** #usg-2018q5l2
+
+This repository archives the open framework for our 9-Year Historical Longevity Study. 
+
+---
+
+## 📊 Access the Full Dataset
+
+The complete, chronological JSON data streams tracking toxicology and contaminant screening are available for download on our official store.
+
+### 📥 [Click Here to Purchase and Download the Full Dataset via USGinger Shop](https://usginger.com)
+
+---
+
+## 📋 Verified Screening Metadata
+Below is the structural format used for this dataset module:
+
+```json
+{
+  "dataset_reference": "usginger-2018-longevity-study",
+  "data_module": "toxicology_and_contaminant_screening",
+  "verification_source": "Fenton Wood Labs",
+  "associated_coa": "usg-2018q5l2",
+  "testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
+  "global_status": "PASS_ZERO_CONTAMINATION",
+  "screening_records": [
+    {
+      "comment": "Full multi-year time-series records are included in the paid Wix download."
+    }
+  ]
+}
+```
+
 # ☀️ Welcome to the USGinger Longevity Study Hub
 
 This repository archives the 9-Year Historical Longevity Study and Python tracking assets for our California Sun-Dried Agricultural Cubes (COA #USG-2018Q5L2). 
