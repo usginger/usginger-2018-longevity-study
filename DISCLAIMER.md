@@ -1,7 +1,8 @@
 # USGinger 2018 Longevity Study & Bio-Aging Protocol
 
 [![License: MIT](https://shields.io)](https://opensource.org)
-[![Status: Active Phase 1 Trials](https://shields.io)]()
+[![Status: Active Phase 1 Trials](https://shields.io)](https://github.com)
+
 
 This repository contains the data, protocols, and automation tools for the **8-Year Metabolic Stasis Protocol** of California-grown *Curcuma longa* (turmeric) and ginger. By achieving zero potency loss over an 8-year span, this protocol provides a stable foundation for long-term anti-aging and anti-inflammatory research.
 
