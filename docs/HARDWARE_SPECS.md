@@ -53,6 +53,14 @@ This document lists the hardware components and wiring layouts needed to build a
 └────────────────────────────────────────────────────────┘
 ```
 
+## 💻 Running the Automation Loop
+
+To initialize the hardware environment tracking and launch the automated loop, run the controller file from the root directory:
+
+```bash
+python scripts/chamber_control.py
+```
+
 ---
 
 ## 🛠️ Setup and Installation Instructions
@@ -61,3 +69,4 @@ This document lists the hardware components and wiring layouts needed to build a
 2. Interface the DHT22 atmospheric sensor and moisture probes to the Raspberry Pi GPIO pins.
 3. Route the 12V Peltier module through a relay switch controlled by the core microprocessor.
 4. Clone this repository and execute the upcoming automation scripts to begin climate control calibration.
+5. This repository is for open-source scientific research, educational, and documentation purposes only. The protocols described herein have not been evaluated by the Food and Drug Administration (FDA) [SA1]. This protocol is not intended to diagnose, treat, cure, or prevent any disease [SA1]. Consult a qualified healthcare professional before beginning any new supplement or biohacking regimen [SA1].
