@@ -1,4 +1,11 @@
 
+## 🧬 Reverse Aging & Longevity Science
+
+This project goes beyond symptom management. The 8-year metabolic stasis protocol preserves active compounds that target the root causes of biological decay, including **inflammaging**, **cellular junk buildup**, and **zombie cells**.
+
+* **Read the Science:** Explore our full framework here: [Reverse Aging Science Guide](LONGEVITY_SCIENCE.md)
+
+
 # ☀ USGinger 2018 Longevity Study Hub
 
 > 🔬 **Official Status:** `PASS_ZERO_CONTAMINATION`  
