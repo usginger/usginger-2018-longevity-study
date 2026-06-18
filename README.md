@@ -1,4 +1,6 @@
 
+* [🏺 Storage Protocol Guide](STORAGE_PROTOCOL.md) — Detailed breakdown of the 9-year metabolic stasis environmental settings.
+
 ## 🌾 Agricultural Provenance & Potency Breakout
 
 The unmatched stability documented in **COA #USG-2018Q5L2** is rooted in a deliberate, multi-year multi-generational cultivation strategy in Merced, California:
