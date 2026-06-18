@@ -32,3 +32,14 @@ If you are participating in the 14-day trial and want to track true reverse agin
 * **Biological Age Clocks:** If you take commercial epigenetic spit tests (like Horvath's Clock), log your biological age acceleration shifts before and after extended cycles.
 * **hs-CRP (High-Sensitivity C-Reactive Protein):** This blood marker measures systemic inflammation. Lowering hs-CRP is a direct indicator of slowing down the aging process.
 * **Fasting Insulin Levels:** Keeping insulin low and stable prevents advanced glycation end-products (AGEs), which literally stiffen and age your collagen and blood vessels.
+
+---
+
+* ## 📈 Longitudinal Potency & Stability Trends
+
+The chart below highlights the massive phenotypic jump in active curcuminoid density observed during the 2018 harvest relative to the 2017 baseline, alongside its multi-year stasis tracking:
+
+![USGinger 2017-2026 Stability Matrix](docs/potency_spike_trends.png)
+
+*Figure 1.0: Multi-year evaluation displaying the 2018 chemical breakthrough and longitudinal molecular preservation under COA #USG-2018Q5L2.*
+
