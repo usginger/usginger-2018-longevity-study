@@ -1,3 +1,5 @@
+"storage_id": "STASIS-2018-MERCED-01"
+
 # 🏺 9-Year Metabolic Stasis Storage Protocol
 
 This document outlines the environmental controls and preservation methods used to maintain the active curcuminoid stability of the 2018 *Jiang-Huang* harvest. By halting organic degradation, this protocol ensures long-term molecular data integrity.
