@@ -1,4 +1,12 @@
 
+## 🌾 Agricultural Provenance & Potency Breakout
+
+The unmatched stability documented in **COA #USG-2018Q5L2** is rooted in a deliberate, multi-year multi-generational cultivation strategy in Merced, California:
+
+* **2017 Foundation Harvest**: Our first successful open-ground cultivation of true *Jiang-Huang* (Turmeric) in Merced established a highly resilient rhizome biomass, adapting the tropical plant to local soil biomes.
+* **2018 Curcuminoid Breakthrough**: Environmental adaptations during the 2018 growing season triggered a massive phenotypic leap. The resulting harvest yielded a structurally distinct matrix of active curcuminoids.
+* **Enhanced Efficacy**: When processed into our sun-dried agricultural cubes, this specific 2018 crop demonstrated a dramatic spike in active compound retention and antioxidant density, laying the groundwork for our 9-year metabolic stasis protocol.
+
 ## 🧬 Reverse Aging & Longevity Science
 
 This project goes beyond symptom management. The 8-year metabolic stasis protocol preserves active compounds that target the root causes of biological decay, including **inflammaging**, **cellular junk buildup**, and **zombie cells**.
