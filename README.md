@@ -49,7 +49,7 @@ Below is the structural format used for this dataset module:
   }
 }
 
-```
+```json
 {
   "dataset_reference": "usginger-2018-longevity-study",
   // ... rest of the JSON structure
