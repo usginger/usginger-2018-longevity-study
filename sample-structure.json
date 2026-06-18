@@ -1,7 +1,13 @@
 {
-"dataset_reference": "usginger-2018-longevity-study",
-"data_module": "toxicology_and_contaminant_screening",
-"verification_source": "Fenton Wood Labs",
-"associated_coa": "usg-2018q5l2",
-"testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
-"global_status": "PASS_ZERO_CONTAMINATION" }
+  "dataset_reference": "usginger-2018-longevity-study",
+  "data_module": "toxicology_and_contaminant_screening",
+  "verification_source": "Fenton Wood Labs",
+  "associated_coa": "usg-2018q5l2",
+  "testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
+  "global_status": "PASS_ZERO_CONTAMINATION",
+  "agricultural_provenance": {
+    "cultivation_locale": "Merced, California, USA",
+    "harvest_year": 2018,
+    "phenotypic_notes": "Significant increase in active curcuminoid density and potency compared to 2017 baseline"
+  }
+}
