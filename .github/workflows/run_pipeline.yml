@@ -1,3 +1,4 @@
+
 name: Run USGinger Data Pipeline
 
 on:
@@ -23,21 +24,61 @@ jobs:
         python -m pip install --upgrade pip
         pip install matplotlib numpy
 
-    - name: Run Pipeline Script
+    - name: Create Validation Script
       run: |
-        # Ensure the docs directory exists for the image export
+        cat << 'EOF' > validate_data.py
+        import json
+        import os
+        import sys
+
+        def validate_json_file(file_path):
+            print(f"🔬 Checking schema for: {file_path}")
+            with open(file_path, 'r') as f:
+                data = json.load(f)
+            
+            # Navigate to the agricultural_provenance sub-block
+            prov = data.get("agricultural_provenance", {})
+            
+            # Enforce the storage_id field check
+            if "storage_id" not in prov:
+                print(f"❌ ERROR: Missing 'storage_id' inside 'agricultural_provenance' in {file_path}!")
+                return False
+            
+            print(f"✅ PASS: 'storage_id' found -> Value: {prov['storage_id']}")
+            return True
+
+        # Check all JSON files in the root folder
+        success = True
+        for file in os.listdir('.'):
+            if file.endswith('.json'):
+                if not validate_json_file(file):
+                    success = False
+
+        if not success:
+            sys.exit(1)
+        print("🎉 Validation successful! All schemas match the required storage_id standard.")
+        EOF
+
+    - name: Run Data Validation Check
+      run: |
+        python3 validate_data.py
+
+    - name: Run Visualization Script
+      run: |
         mkdir -p docs
-        # Run the visualization script directly from the repository base
         python3 visualize_data.py
 
-    - name: Commit and Push Generated Graph
+    - name: Commit and Push Generated Graph & Validator
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@://github.com"
-        git add docs/potency_spike_trends.png || true
-        git commit -m "Charts: Automatically generated 2018 potency trend graph [skip ci]" || echo "No changes to commit"
+        git add docs/potency_spike_trends.png validate_data.py || true
+        git commit -m "Automation: Add validation engine and refresh trends [skip ci]" || echo "No changes to commit"
         git push origin main || echo "No changes to push"
 
+
+  
+     
     
    
        
