@@ -1,0 +1,38 @@
+name: Run USGinger Data Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install Matplotlib and Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install matplotlib numpy
+
+    - name: Run Pipeline Bash Script
+      run: |
+        chmod +x update_pipeline.sh
+        # Run only the generation parts inside the automation runner
+        python3 scripts/visualize_data.py
+
+    - name: Commit and Push Generated Graph
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@://github.com"
+        git add docs/potency_spike_trends.png || true
+        git commit -m "Charts: Automatically generated 2018 potency trend graph [skip ci]" || echo "No changes to commit"
+        git push origin main || echo "No changes to push"
