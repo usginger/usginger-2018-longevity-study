@@ -47,10 +47,14 @@ jobs:
             print(f"✅ PASS: 'storage_id' found -> Value: {prov['storage_id']}")
             return True
 
-        # Check all JSON files in the root folder
+        # Check all JSON files in the root folder, skipping configuration files
         success = True
         for file in os.listdir('.'):
             if file.endswith('.json'):
+                # SKIP configuration files like .markdownlint.json
+                if file.startswith('.'):
+                    print(f"⏩ SKIPPING CONFIG FILE: {file}")
+                    continue
                 if not validate_json_file(file):
                     success = False
 
@@ -76,8 +80,7 @@ jobs:
         git commit -m "Automation: Add validation engine and refresh trends [skip ci]" || echo "No changes to commit"
         git push origin main || echo "No changes to push"
 
-
-  
+    
      
     
    
