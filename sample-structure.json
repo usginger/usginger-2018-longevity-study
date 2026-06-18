@@ -8,6 +8,7 @@
   "agricultural_provenance": {
     "cultivation_locale": "Merced, California, USA",
     "harvest_year": 2018,
+    "storage_id": "STASIS-2018-MERCED-01",
     "phenotypic_notes": "Significant increase in active curcuminoid density and potency compared to 2017 baseline"
   }
 }
