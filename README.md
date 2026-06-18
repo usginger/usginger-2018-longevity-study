@@ -35,7 +35,6 @@ The complete, chronological JSON data streams tracking toxicology and contaminan
 ## 📋 Verified Screening Metadata
 Below is the structural format used for this dataset module:
 
-```json
 {
   "dataset_reference": "usginger-2018-longevity-study",
   "data_module": "toxicology_and_contaminant_screening",
@@ -43,12 +42,14 @@ Below is the structural format used for this dataset module:
   "associated_coa": "usg-2018q5l2",
   "testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
   "global_status": "PASS_ZERO_CONTAMINATION",
-  "screening_records": [
-    {
-      "comment": "Full multi-year time-series records are included in the paid Wix download."
-    }
-  ]
+  "agricultural_provenance": {
+    "cultivation_locale": "Merced, California, USA",
+    "harvest_year": 2018,
+    "phenotypic_notes": "Significant increase in active curcuminoid density and potency compared to 2017 baseline"
+  }
 }
+
+
 ```
 
 # ☀️ Welcome to the USGinger Longevity Study Hub
