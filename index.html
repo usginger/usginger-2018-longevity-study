@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#18181b">
+    <title>Stasis Reader • USGinger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .document-content { line-height: 1.7; }
+        .document-content h1, .document-content h2, .document-content h3 { font-weight: 600; margin-top: 1.5em; margin-bottom: 0.5em; }
+        .nav-active { color: #f59e0b; border-bottom: 2px solid #f59e0b; }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <div class="max-w-md mx-auto min-h-screen bg-zinc-950">
+        
+        <!-- Header -->
+        <div class="px-5 pt-8 pb-5 border-b border-zinc-800">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-9 h-9 bg-amber-500 rounded-2xl flex items-center justify-center">
+                            <i class="fa-solid fa-book text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-semibold tracking-tight">Stasis Reader</h1>
+                            <p class="text-xs text-zinc-500">USGinger • 2018 Longevity Study</p>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="installApp()" 
+                        class="flex items-center gap-x-2 px-4 py-2 bg-white text-black text-sm font-medium rounded-2xl hover:bg-zinc-100">
+                    <i class="fa-solid fa-download"></i>
+                    <span class="hidden sm:inline">Install</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex border-b border-zinc-800 px-1 overflow-x-auto">
+            <button onclick="showSection('overview')" class="nav-btn px-5 py-3 text-sm font-medium nav-active" data-section="overview">Overview</button>
+            <button onclick="showSection('documents')" class="nav-btn px-5 py-3 text-sm font-medium" data-section="documents">Documents</button>
+            <button onclick="showSection('data')" class="nav-btn px-5 py-3 text-sm font-medium" data-section="data">Data</button>
+            <button onclick="showSection('access')" class="nav-btn px-5 py-3 text-sm font-medium" data-section="access">Access</button>
+        </div>
+
+        <!-- Content -->
+        <div class="p-5">
+            
+            <!-- OVERVIEW -->
+            <div id="overview" class="section">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-6">
+                    <h2 class="text-xl font-semibold mb-3">9-Year Metabolic Stasis Study</h2>
+                    <p class="text-zinc-300 mb-4">A longitudinal study documenting the exceptional stability of bioactive compounds in sun-dried agricultural cubes from the 2018 Jiang-Huang harvest in Merced, California.</p>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="bg-zinc-950 p-3 rounded-2xl">
+                            <div class="text-xs text-zinc-400">Duration</div>
+                            <div class="font-semibold">9 Years</div>
+                        </div>
+                        <div class="bg-zinc-950 p-3 rounded-2xl">
+                            <div class="text-xs text-zinc-400">Status</div>
+                            <div class="font-semibold text-emerald-400">Metabolic Stasis Achieved</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-xs text-center text-zinc-500">
+                    Content is pulled live from the official GitHub repository
+                </div>
+            </div>
+
+            <!-- DOCUMENTS -->
+            <div id="documents" class="section hidden">
+                <h3 class="font-semibold mb-4 px-1">Study Documents</h3>
+                
+                <div class="space-y-3">
+                    <div onclick="loadDocument('README.md', 'README')" 
+                         class="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 p-4 rounded-3xl flex items-center justify-between cursor-pointer">
+                        <div>
+                            <div class="font-medium">README</div>
+                            <div class="text-xs text-zinc-400">Full project overview & licensing</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-zinc-400"></i>
+                    </div>
+
+                    <div onclick="loadDocument('STORAGE_PROTOCOL.md', 'Storage Protocol')" 
+                         class="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 p-4 rounded-3xl flex items-center justify-between cursor-pointer">
+                        <div>
+                            <div class="font-medium">Storage Protocol</div>
+                            <div class="text-xs text-zinc-400">How metabolic stasis was maintained</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-zinc-400"></i>
+                    </div>
+
+                    <div onclick="loadDocument('LONGEVITY_SCIENCE.md', 'Longevity Science')" 
+                         class="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 p-4 rounded-3xl flex items-center justify-between cursor-pointer">
+                        <div>
+                            <div class="font-medium">Longevity Science</div>
+                            <div class="text-xs text-zinc-400">Mechanisms: autophagy, senolytics, SIRT1</div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-zinc-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DATA -->
+            <div id="data" class="section hidden">
+                <h3 class="font-semibold mb-4 px-1">Study Data Schema</h3>
+                <div onclick="loadJSON()" 
+                     class="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 p-4 rounded-3xl cursor-pointer flex justify-between items-center">
+                    <div>
+                        <div class="font-medium">sample-structure.json</div>
+                        <div class="text-xs text-zinc-400">Dataset structure & provenance</div>
+                    </div>
+                    <i class="fa-solid fa-code text-amber-400"></i>
+                </div>
+            </div>
+
+            <!-- ACCESS -->
+            <div id="access" class="section hidden">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-5">
+                    <h3 class="font-semibold mb-3">Accessing Full Data</h3>
+                    <p class="text-sm text-zinc-300 mb-4">The complete 9-year dataset and physical samples are available under the USGinger Restrictive Non-Commercial Research License.</p>
+                    <a href="https://github.com/usginger/usginger-2018-longevity-study" target="_blank"
+                       class="block w-full text-center py-3 bg-white text-black rounded-2xl font-medium">
+                        View Full Repository on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Document Viewer -->
+            <div id="viewer" class="hidden mt-4">
+                <div class="flex items-center justify-between mb-3 px-1">
+                    <div id="viewer-title" class="font-semibold text-lg"></div>
+                    <button onclick="closeViewer()" class="text-zinc-400 hover:text-white">
+                        <i class="fa-solid fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div id="viewer-content" 
+                     class="document-content bg-zinc-900 border border-zinc-800 rounded-3xl p-5 text-sm overflow-auto max-h-[70vh]">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(el => el.classList.add('hidden'));
+            // Show target
+            document.getElementById(section).classList.remove('hidden');
+            
+            // Update nav
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('nav-active'));
+            const activeBtn = document.querySelector(`[data-section="${section}"]`);
+            if (activeBtn) activeBtn.classList.add('nav-active');
+            
+            // Close viewer when switching
+            document.getElementById('viewer').classList.add('hidden');
+        }
+
+        async function loadDocument(filename, title) {
+            const viewer = document.getElementById('viewer');
+            const content = document.getElementById('viewer-content');
+            const titleEl = document.getElementById('viewer-title');
+
+            titleEl.textContent = title;
+            content.innerHTML = `<div class="flex justify-center py-8"><i class="fa-solid fa-spinner fa-spin text-2xl text-amber-400"></i></div>`;
+            viewer.classList.remove('hidden');
+
+            try {
+                const res = await fetch(`https://raw.githubusercontent.com/usginger/usginger-2018-longevity-study/main/${filename}`);
+                const text = await res.text();
+                
+                // Render Markdown
+                content.innerHTML = marked.parse(text);
+            } catch (e) {
+                content.innerHTML = `<p class="text-red-400">Failed to load document. Please check your connection.</p>`;
+            }
+        }
+
+        async function loadJSON() {
+            const viewer = document.getElementById('viewer');
+            const content = document.getElementById('viewer-content');
+            const titleEl = document.getElementById('viewer-title');
+
+            titleEl.textContent = "sample-structure.json";
+            content.innerHTML = `<div class="flex justify-center py-8"><i class="fa-solid fa-spinner fa-spin text-2xl text-amber-400"></i></div>`;
+            viewer.classList.remove('hidden');
+
+            try {
+                const res = await fetch('https://raw.githubusercontent.com/usginger/usginger-2018-longevity-study/main/sample-structure.json');
+                const json = await res.json();
+                content.innerHTML = `<pre class="text-xs bg-zinc-950 p-4 rounded-2xl overflow-auto"><code>${JSON.stringify(json, null, 2)}</code></pre>`;
+            } catch (e) {
+                content.innerHTML = `<p class="text-red-400">Failed to load JSON data.</p>`;
+            }
+        }
+
+        function closeViewer() {
+            document.getElementById('viewer').classList.add('hidden');
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+            } else {
+                alert("On your phone:\n\niOS: Tap the Share button → 'Add to Home Screen'\nAndroid: Tap the menu → 'Install app'");
+            }
+        }
+
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        // Initialize
+        function init() {
+            // Show overview by default
+            document.getElementById('overview').classList.remove('hidden');
+            document.querySelector('[data-section="overview"]').classList.add('nav-active');
+            
+            console.log('%c[USGinger] Stasis Reader initialized', 'color:#3f3f46');
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
