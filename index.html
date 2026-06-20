@@ -24,12 +24,12 @@
       <div class="w-9 h-9 bg-orange-500 rounded flex items-center justify-center">
         <i class="fa-solid fa-book text-white text-xl"></i>
       </div>
-      <div class="font-bold text-xl">Stasis Reader</div>
+      <div class="font-bold text-xl">Stasis Reader ©</div>
     </div>
 
     <!-- Main Headline -->
     <div class="text-center">
-      <h1 class="text-4xl font-bold tracking-tighter">The Easy Reader ©</h1>
+      <h1 class="text-4xl font-bold tracking-tighter">The Easy Reader</h1>
     </div>
 
     <!-- Install App Button -->
@@ -56,6 +56,12 @@
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold text-xl mb-3">9-Year Metabolic Stasis Study</h2>
       <p class="text-gray-300 mb-4">A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.</p>
+      
+      <div class="text-sm text-gray-400">
+        <p><strong>COA:</strong> USG-2018Q5L2</p>
+        <p><strong>Location:</strong> Merced, California</p>
+        <p><strong>Status:</strong> PASS — Zero Contamination</p>
+      </div>
     </div>
   </div>
 
@@ -63,7 +69,38 @@
   <div id="documents" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">Documents</h2>
-      <p class="text-gray-400">Coming soon...</p>
+      <div class="space-y-3 text-sm">
+        <a href="US%20Ginger%20-%20Collated%20Certificates%20of%20AnalysisLot2.pdf" 
+           class="flex items-center gap-2 hover:text-orange-400" target="_blank">
+          <i class="fa-solid fa-file-pdf text-red-400"></i> 
+          <span>Collated Certificates of Analysis (Lot 2)</span>
+        </a>
+        
+        <a href="VERIFIED_COA_USG-2018Q5L2.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
+          <i class="fa-solid fa-file-lines"></i> 
+          <span>Verified COA Record</span>
+        </a>
+        
+        <a href="STORAGE_PROTOCOL.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
+          <i class="fa-solid fa-file-lines"></i> 
+          <span>9-Year Storage Protocol</span>
+        </a>
+        
+        <a href="process.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
+          <i class="fa-solid fa-file-lines"></i> 
+          <span>Production & Microclimate Process</span>
+        </a>
+        
+        <a href="LONGEVITY_SCIENCE.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
+          <i class="fa-solid fa-file-lines"></i> 
+          <span>Longevity Science Framework</span>
+        </a>
+        
+        <a href="README.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
+          <i class="fa-solid fa-file-lines"></i> 
+          <span>Full Repository README</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -71,7 +108,17 @@
   <div id="data" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">Data & Charts</h2>
-      <p class="text-gray-400">Coming soon...</p>
+      
+      <div class="mb-4">
+        <p class="text-sm text-gray-400 mb-2">Curcuminoid Density & Metabolic Stasis Retention (2017–2026)</p>
+        <img src="docs/potency_spike_trends.png" alt="Curcuminoid & Stasis Trends" class="rounded-xl w-full border border-zinc-700">
+        <p class="text-xs text-gray-500 mt-1">2018 breakthrough highlighted (+110% curcuminoid density leap)</p>
+      </div>
+
+      <div class="text-xs text-gray-400">
+        Interactive charts + full time-series JSON coming soon.<br>
+        Current data generated from verified lab results (Fenton Wood Labs).
+      </div>
     </div>
   </div>
 
@@ -79,7 +126,13 @@
   <div id="next" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">What's Next</h2>
-      <p class="text-gray-400">Future updates coming soon...</p>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li class="flex gap-2"><i class="fa-solid fa-check text-green-400 mt-1"></i> Public Easy Reader dashboard (current)</li>
+        <li class="flex gap-2"><i class="fa-solid fa-clock text-orange-400 mt-1"></i> Interactive Chart.js dashboards from JSON</li>
+        <li class="flex gap-2"><i class="fa-solid fa-clock text-orange-400 mt-1"></i> Pesticide residue trends over 9 years</li>
+        <li class="flex gap-2"><i class="fa-solid fa-clock text-orange-400 mt-1"></i> Tier 2 paid JSON/CSV data streams</li>
+        <li class="flex gap-2"><i class="fa-solid fa-clock text-orange-400 mt-1"></i> AI-powered insights & stability predictions</li>
+      </ul>
     </div>
   </div>
 
@@ -87,6 +140,7 @@
     function showSection(section) {
       document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
       document.getElementById(section).classList.add('active');
+      
       document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('nav-active'));
       const activeBtn = document.querySelector(`[data-section="${section}"]`);
       if (activeBtn) activeBtn.classList.add('nav-active');
@@ -97,16 +151,3 @@
     const installBtn = document.getElementById('installBtn');
 
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.classList.remove('hidden');
-    });
-
-    installBtn.addEventListener('click', async () => {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      deferredPrompt = null;
-      installBtn.classList.add('hidden');
-    });
-
-    window.addEventListener('appinstalled', () => {
