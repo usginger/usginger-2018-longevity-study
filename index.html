@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Easy Reader • Stasis Reader</title>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="pwa-manifest.json">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -42,7 +42,7 @@
     <button onclick="showSection('next')" class="nav-btn px-5 py-3 font-medium" data-section="next">What's Next</button>
   </div>
 
-  <!-- Sections -->
+  <!-- OVERVIEW -->
   <div id="overview" class="section active">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold text-xl mb-3">9-Year Metabolic Stasis Study</h2>
@@ -50,6 +50,7 @@
     </div>
   </div>
 
+  <!-- DOCUMENTS -->
   <div id="documents" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">Documents</h2>
@@ -57,6 +58,7 @@
     </div>
   </div>
 
+  <!-- DATA -->
   <div id="data" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">Data & Charts</h2>
@@ -64,6 +66,7 @@
     </div>
   </div>
 
+  <!-- WHAT'S NEXT -->
   <div id="next" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">What's Next</h2>
@@ -76,7 +79,8 @@
       document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
       document.getElementById(section).classList.add('active');
       document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('nav-active'));
-      document.querySelector(`[data-section="${section}"]`).classList.add('nav-active');
+      const activeBtn = document.querySelector(`[data-section="${section}"]`);
+      if (activeBtn) activeBtn.classList.add('nav-active');
     }
 
     // PWA Service Worker
@@ -86,7 +90,9 @@
       });
     }
 
-    window.onload = () => document.getElementById('overview').classList.add('active');
+    window.onload = () => {
+      document.getElementById('overview').classList.add('active');
+    };
   </script>
 </body>
 </html>
