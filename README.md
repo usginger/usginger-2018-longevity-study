@@ -1,4 +1,32 @@
 
+## 🚀 Try the Stasis Reader App
+
+The **Stasis Reader** is a clean, easy-to-use web app designed to explore the 9-Year Metabolic Stasis Study on sun-dried turmeric cubes from Merced, California.
+
+Track your intake, monitor trends, and access study documents & data — all in one place.
+
+### 📥 Install the App
+- **Web App**: [Open Stasis Reader](https://usginger.github.io/usginger-2018-longevity-study/)
+- **Custom Domain**: [www.stasisreader.com](https://www.stasisreader.com)
+
+### 🎁 Limited Giveaway – First 30 Participants Only
+
+To celebrate the launch, we’re giving away **8oz of our sun-dried turmeric cubes**.
+
+- **Only 3 winners** will be selected.
+- The first **30 people** who complete the steps below will be entered into the draw.
+
+**How to Enter:**
+1. **Star** this repository
+2. **Install** the Stasis Reader app
+3. Leave a **review/feedback** in the [Discussions](https://github.com/usginger/usginger-2018-longevity-study/discussions) section
+
+That’s it. The first 30 people who do all three will be entered.
+
+---
+
+> **Note**: This is a limited launch offer. Once we hit 30 participants, the giveaway will close.
+
 * [🏺 Storage Protocol Guide](STORAGE_PROTOCOL.md) — Detailed breakdown of the 9-year metabolic stasis environmental settings.
 
 ## 🌾 Agricultural Provenance & Potency Breakout
