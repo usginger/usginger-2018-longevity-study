@@ -17,5 +17,8 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "agricultural_provenance": {
+    "storage_id": "STASIS-2018-MERCED-01"
+  }
 }
