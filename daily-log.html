@@ -28,12 +28,12 @@
       <div class="w-9 h-9 bg-orange-500 rounded flex items-center justify-center">
         <i class="fa-solid fa-book text-white text-xl"></i>
       </div>
-      <div class="font-bold text-xl">Stasis Reader</div>
+      <div class="font-bold text-xl">Stasis Reader ©</div>
     </div>
 
     <!-- Main Headline -->
     <div class="text-center">
-      <h1 class="text-3xl font-bold tracking-tight">The Easy Reader ©</h1>
+      <h1 class="text-3xl font-bold tracking-tight">The Easy Reader</h1>
       <p class="text-sm text-gray-400 mt-0.5">Daily Log</p>
     </div>
 
@@ -170,28 +170,198 @@
       setTimeout(() => { toast.style.display = 'none'; }, 2000);
     }
 
+    function calculateStreak(logs) {
+      if (logs.length === 0) return 0;
+      
+      const dates = logs.map(log => new Date(log.date).toDateString());
+      const uniqueDates = [...new Set(dates)].sort((a, b) => new Date(b) - new Date(a));
+      
+      let streak = 1;
+      for (let i = 1; i < uniqueDates.length; i++) {
+        const current = new Date(uniqueDates[i]);
+        const previous = new Date(uniqueDates[i - 1]);
+        const diffDays = Math.floor((previous - current) / (1000 * 60 * 60 * 24));
+        if (diffDays === 1) {
+          streak++;
+        } else {
+          break;
+        }
+      }
+      return streak;
+    }
+
     function updateStats(logs) {
       document.getElementById('total-logs').textContent = logs.length;
-      // Streak and Avg BP logic can be added back here
+      
+      // Streak
+      const streak = calculateStreak(logs);
+      document.getElementById('streak').textContent = streak;
+      
+      // Average BP
+      if (logs.length > 0) {
+        const validLogs = logs.filter(l => l.systolic && l.diastolic);
+        if (validLogs.length > 0) {
+          const avgSys = Math.round(validLogs.reduce((sum, l) => sum + parseInt(l.systolic), 0) / validLogs.length);
+          const avgDia = Math.round(validLogs.reduce((sum, l) => sum + parseInt(l.diastolic), 0) / validLogs.length);
+          document.getElementById('avg-bp').textContent = `${avgSys}/${avgDia}`;
+        } else {
+          document.getElementById('avg-bp').textContent = '--';
+        }
+      } else {
+        document.getElementById('avg-bp').textContent = '--';
+      }
     }
 
     function updateChart(logs) {
-      // Chart code stays the same
+      const ctx = document.getElementById('bpChart');
+      
+      if (chartInstance) {
+        chartInstance.destroy();
+      }
+
+      const sortedLogs = [...logs].sort((a, b) => new Date(a.date) - new Date(b.date));
+      const labels = sortedLogs.map(log => new Date(log.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+      const systolic = sortedLogs.map(log => log.systolic ? parseInt(log.systolic) : null);
+      const diastolic = sortedLogs.map(log => log.diastolic ? parseInt(log.diastolic) : null);
+
+      chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'Systolic',
+              data: systolic,
+              borderColor: '#f97316',
+              backgroundColor: 'rgba(249, 115, 22, 0.1)',
+              tension: 0.3,
+              fill: false
+            },
+            {
+              label: 'Diastolic',
+              data: diastolic,
+              borderColor: '#fb923c',
+              backgroundColor: 'rgba(251, 146, 60, 0.1)',
+              tension: 0.3,
+              fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: true, position: 'top' } },
+          scales: {
+            y: { beginAtZero: false, grid: { color: '#333' } },
+            x: { grid: { color: '#333' } }
+          }
+        }
+      });
     }
 
     function saveLog() {
-      // Your existing saveLog logic + showToast
+      const type = document.getElementById('type').value;
+      const dose = document.getElementById('dose').value;
+      const unit = document.getElementById('unit').value;
+      const systolic = document.getElementById('systolic').value;
+      const diastolic = document.getElementById('diastolic').value;
+      const hr = document.getElementById('hr').value;
+      const notes = document.getElementById('notes').value;
+
+      if (!dose) {
+        alert("Please enter a dose");
+        return;
+      }
+
+      const log = {
+        date: new Date().toISOString(),
+        type,
+        dose: parseFloat(dose),
+        unit,
+        systolic: systolic ? parseInt(systolic) : null,
+        diastolic: diastolic ? parseInt(diastolic) : null,
+        hr: hr ? parseInt(hr) : null,
+        notes
+      };
+
+      let logs = JSON.parse(localStorage.getItem('usginger_logs') || '[]');
+      logs.unshift(log); // newest first
+      localStorage.setItem('usginger_logs', JSON.stringify(logs));
+
       showToast("Log saved successfully!");
+      
+      // Clear form
+      document.getElementById('dose').value = '';
+      document.getElementById('systolic').value = '';
+      document.getElementById('diastolic').value = '';
+      document.getElementById('hr').value = '';
+      document.getElementById('notes').value = '';
+
+      loadAll();
     }
 
     function downloadData() {
-      // Your existing downloadData function
+      const logs = JSON.parse(localStorage.getItem('usginger_logs') || '[]');
+      if (logs.length === 0) {
+        alert("No logs to download");
+        return;
+      }
+      const dataStr = JSON.stringify(logs, null, 2);
+      const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+      
+      const exportFileDefaultName = `usginger_daily_logs_${new Date().toISOString().slice(0,10)}.json`;
+      
+      const linkElement = document.createElement('a');
+      linkElement.setAttribute('href', dataUri);
+      linkElement.setAttribute('download', exportFileDefaultName);
+      linkElement.click();
+    }
+
+    function clearAllLogs() {
+      if (confirm('Delete all logs? This cannot be undone.')) {
+        localStorage.removeItem('usginger_logs');
+        loadAll();
+        showToast("All logs cleared");
+      }
+    }
+
+    function renderHistory(logs) {
+      const container = document.getElementById('history');
+      container.innerHTML = '';
+
+      if (logs.length === 0) {
+        container.innerHTML = '<p class="text-sm text-gray-500 px-1">No logs yet. Start tracking!</p>';
+        return;
+      }
+
+      logs.slice(0, 10).forEach((log, index) => {
+        const date = new Date(log.date).toLocaleDateString('en-US', { 
+          month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' 
+        });
+        
+        const div = document.createElement('div');
+        div.className = 'card rounded-2xl p-4 text-sm';
+        div.innerHTML = `
+          <div class="flex justify-between items-start">
+            <div>
+              <div class="font-medium">${log.type}</div>
+              <div class="text-xs text-gray-400">${date}</div>
+            </div>
+            <div class="text-right">
+              <div>${log.dose} ${log.unit}</div>
+              ${log.systolic ? `<div class="text-xs">${log.systolic}/${log.diastolic} mmHg</div>` : ''}
+            </div>
+          </div>
+          ${log.notes ? `<div class="text-xs text-gray-400 mt-2">${log.notes}</div>` : ''}
+        `;
+        container.appendChild(div);
+      });
     }
 
     function loadAll() {
       const logs = JSON.parse(localStorage.getItem('usginger_logs') || '[]');
       updateStats(logs);
       updateChart(logs);
+      renderHistory(logs);
     }
 
     function init() {
@@ -224,7 +394,7 @@
     // Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js');
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
       });
     }
   </script>
