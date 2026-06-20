@@ -1,21 +1,25 @@
 {
   "name": "The Easy Reader",
   "short_name": "Stasis Reader",
-  "description": "Track turmeric, ginger, blood pressure & heart rate. Built on the 2018 Metabolic Stasis Study.",
+  "description": "Track your daily turmeric & ginger intake along with blood pressure and heart rate. Built on the 2018 Metabolic Stasis Study.",
   "start_url": "/index.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#f97316",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
