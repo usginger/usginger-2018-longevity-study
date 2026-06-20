@@ -17,16 +17,13 @@ To celebrate the launch, we’re giving away **8oz of our sun-dried turmeric cub
 - The first **30 people** who complete the steps below will be entered into the draw.
 
 **How to Enter:**
-1. **Star** this repository
-2. **Install** the Stasis Reader app
-3. Leave a **review/feedback** in the [Discussions](https://github.com/usginger/usginger-2018-longevity-study/discussions) section
+- Star this repository
+- Install the Stasis Reader app
+- Leave a review/feedback in the [Discussions](https://github.com/usginger/usginger-2018-longevity-study/discussions) section
 
 That’s it. The first 30 people who do all three will be entered.
 
----
-
 > **Note**: This is a limited launch offer. Once we hit 30 participants, the giveaway will close.
-
 * [🏺 Storage Protocol Guide](STORAGE_PROTOCOL.md) — Detailed breakdown of the 9-year metabolic stasis environmental settings.
 
 ## 🌾 Agricultural Provenance & Potency Breakout
