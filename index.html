@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Easy Reader • Stasis Reader</title>
+  <link rel="manifest" href="manifest.json">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     body { background: #0a0a0a; color: #e5e5e5; }
     .card { background: #1a1a1a; }
     .nav-btn { transition: all 0.2s ease; }
-    .nav-active { 
-      color: #f97316; 
-      border-bottom: 2px solid #f97316; 
-    }
+    .nav-active { color: #f97316; border-bottom: 2px solid #f97316; }
     .section { display: none; }
     .section.active { display: block; }
   </style>
@@ -22,8 +20,6 @@
 
   <!-- Header -->
   <div class="mb-6 px-1">
-    
-    <!-- Root Brand -->
     <div class="flex items-center gap-3 mb-2">
       <div class="w-9 h-9 bg-orange-500 rounded flex items-center justify-center">
         <i class="fa-solid fa-book text-white text-xl"></i>
@@ -31,12 +27,10 @@
       <div class="font-bold text-xl">Stasis Reader</div>
     </div>
 
-    <!-- Main Headline + Copyright -->
+    <!-- Main Headline -->
     <div class="text-center">
-      <h1 class="text-4xl font-bold tracking-tighter">The Easy Reader</h1>
-      <p class="text-gray-400 mt-1 text-sm">© 2026 USGinger</p>
+      <h1 class="text-4xl font-bold tracking-tighter">The Easy Reader ©</h1>
     </div>
-
   </div>
 
   <!-- Navigation -->
@@ -44,48 +38,55 @@
     <button onclick="showSection('overview')" class="nav-btn px-5 py-3 font-medium nav-active" data-section="overview">Overview</button>
     <button onclick="showSection('documents')" class="nav-btn px-5 py-3 font-medium" data-section="documents">Documents</button>
     <button onclick="showSection('data')" class="nav-btn px-5 py-3 font-medium" data-section="data">Data</button>
-    
-    <!-- Daily Log -->
-    <button onclick="window.location.href='daily-log.html'" 
-            class="nav-btn px-5 py-3 font-medium hover:text-amber-300">
-      Log
-    </button>
-    
+    <button onclick="window.location.href='daily-log.html'" class="nav-btn px-5 py-3 font-medium hover:text-amber-300">Log</button>
     <button onclick="showSection('next')" class="nav-btn px-5 py-3 font-medium" data-section="next">What's Next</button>
   </div>
 
-  <!-- OVERVIEW SECTION -->
+  <!-- Sections -->
   <div id="overview" class="section active">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold text-xl mb-3">9-Year Metabolic Stasis Study</h2>
-      <p class="text-gray-300 mb-4">
-        A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes 
-        from the 2018 harvest in Merced, California.
-      </p>
-      <div class="text-sm text-gray-400">
-        Built for easy reading and daily self-tracking.
-      </div>
+      <p class="text-gray-300 mb-4">A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.</p>
     </div>
   </div>
 
-  <!-- DOCUMENTS SECTION -->
   <div id="documents" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">Documents</h2>
-      <p class="text-gray-400">Study documents and papers will go here.</p>
+      <p class="text-gray-400">Coming soon...</p>
     </div>
   </div>
 
-  <!-- DATA SECTION -->
   <div id="data" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">Data & Charts</h2>
-      <p class="text-gray-400">Charts and study data will appear here.</p>
+      <p class="text-gray-400">Coming soon...</p>
     </div>
   </div>
 
-  <!-- WHAT'S NEXT SECTION -->
   <div id="next" class="section">
     <div class="card rounded-2xl p-5">
       <h2 class="font-semibold mb-4">What's Next</h2>
-      <p class="text-gray
+      <p class="text-gray-400">Future updates coming soon...</p>
+    </div>
+  </div>
+
+  <script>
+    function showSection(section) {
+      document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+      document.getElementById(section).classList.add('active');
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('nav-active'));
+      document.querySelector(`[data-section="${section}"]`).classList.add('nav-active');
+    }
+
+    // PWA Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+
+    window.onload = () => document.getElementById('overview').classList.add('active');
+  </script>
+</body>
+</html>
