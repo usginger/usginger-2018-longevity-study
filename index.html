@@ -31,14 +31,61 @@
       <div class="font-bold text-xl">Stasis Reader</div>
     </div>
 
-    <!-- Main Headline -->
+    <!-- Main Headline + Copyright -->
     <div class="text-center">
       <h1 class="text-4xl font-bold tracking-tighter">The Easy Reader</h1>
-      <p class="text-gray-400 mt-1 text-sm">Making GitHub scientific repos actually readable</p>
+      <p class="text-gray-400 mt-1 text-sm">© 2026 USGinger</p>
     </div>
 
   </div>
 
   <!-- Navigation -->
   <div class="flex border-b border-zinc-800 px-1 overflow-x-auto text-sm mb-6">
-    <button onclick="showSection('overview')" class="nav-btn px-5 py-3 font-medium nav-active
+    <button onclick="showSection('overview')" class="nav-btn px-5 py-3 font-medium nav-active" data-section="overview">Overview</button>
+    <button onclick="showSection('documents')" class="nav-btn px-5 py-3 font-medium" data-section="documents">Documents</button>
+    <button onclick="showSection('data')" class="nav-btn px-5 py-3 font-medium" data-section="data">Data</button>
+    
+    <!-- Daily Log -->
+    <button onclick="window.location.href='daily-log.html'" 
+            class="nav-btn px-5 py-3 font-medium hover:text-amber-300">
+      Log
+    </button>
+    
+    <button onclick="showSection('next')" class="nav-btn px-5 py-3 font-medium" data-section="next">What's Next</button>
+  </div>
+
+  <!-- OVERVIEW SECTION -->
+  <div id="overview" class="section active">
+    <div class="card rounded-2xl p-5">
+      <h2 class="font-semibold text-xl mb-3">9-Year Metabolic Stasis Study</h2>
+      <p class="text-gray-300 mb-4">
+        A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes 
+        from the 2018 harvest in Merced, California.
+      </p>
+      <div class="text-sm text-gray-400">
+        Built for easy reading and daily self-tracking.
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCUMENTS SECTION -->
+  <div id="documents" class="section">
+    <div class="card rounded-2xl p-5">
+      <h2 class="font-semibold mb-4">Documents</h2>
+      <p class="text-gray-400">Study documents and papers will go here.</p>
+    </div>
+  </div>
+
+  <!-- DATA SECTION -->
+  <div id="data" class="section">
+    <div class="card rounded-2xl p-5">
+      <h2 class="font-semibold mb-4">Data & Charts</h2>
+      <p class="text-gray-400">Charts and study data will appear here.</p>
+    </div>
+  </div>
+
+  <!-- WHAT'S NEXT SECTION -->
+  <div id="next" class="section">
+    <div class="card rounded-2xl p-5">
+      <h2 class="font-semibold mb-4">What's Next</h2>
+      <p class="text-gray
