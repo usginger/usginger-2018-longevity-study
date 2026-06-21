@@ -1,0 +1,17 @@
+{
+  "short_name": "StasisReader",
+  "name": "Stasis Reader Daily Log",
+  "icons": [
+    {
+      "src": "https://flaticon.com",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/log.html",
+  "background_color": "#0a0a0a",
+  "theme_color": "#f97316",
+  "display": "standalone",
+  "orientation": "portrait"
+}
