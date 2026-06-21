@@ -146,6 +146,34 @@
             letter-spacing: 0.5px;
         }
 
+        /* 7. Action Link Layout (Documents view) */
+        .doc-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        .doc-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 8. What's Next Timeline Map Styling */
+        .timeline-list {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #cccccc;
+            font-size: 0.95rem;
+        }
+        .timeline-list li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .timeline-list strong {
+            color: #ff6600;
+        }
+
         .hidden {
             display: none !important;
         }
@@ -178,6 +206,9 @@
             <h2>9-Year Metabolic Stasis Study</h2>
             <p>A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.</p>
             
+            <!-- Custom UI Slots that get toggled by script -->
+            <div id="custom-ui-slot"></div>
+
             <div class="meta-data">
                 <div><strong>COA:</strong> USG-2018Q5L2</div>
                 <div><strong>Location:</strong> Merced, California</div>
@@ -191,16 +222,18 @@
         const tabData = {
             "Overview": {
                 title: "9-Year Metabolic Stasis Study",
-                text: "A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California."
+                text: "A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.",
+                type: "standard"
             },
             "Documents": {
                 title: "Study Documents",
-                text: "Access the original research papers, lab logs, and official certificates of analysis for the 2018 harvest samples."
+                text: "Access the official files and certificates of analysis for the harvest sample sets.",
+                type: "documents"
             },
             "Data": {
                 title: "Metabolic Data Metrics",
                 text: "Live stability track logs over the 9-year testing timeline.",
-                showMetrics: true, 
+                type: "data", 
                 metrics: [
                     { value: "95.4%", label: "Curcumin Stasis" },
                     { value: "0.02%", label: "Moisture Cap" },
@@ -209,22 +242,20 @@
             },
             "Log": {
                 title: "Activity Log",
-                text: "System checks, environment updates, and physical sample inspections recorded by laboratory sensors."
+                text: "System checks, environment updates, and physical sample inspections recorded by laboratory sensors.",
+                type: "standard"
             },
             "What's Next": {
                 title: "Future Testing Phase",
-                text: "Plans for expanding structural stasis modeling and opening next-generation testing phases for longer crop dormancy tracking."
+                text: "Upcoming project targets for expanding structural crop dormancy tracking:",
+                type: "timeline"
             }
         };
 
         const tabs = document.querySelectorAll('.tab');
         const cardTitle = document.querySelector('.info-card h2');
         const cardText = document.querySelector('.info-card p');
-
-        // Create container for stats boxes
-        let statsContainer = document.createElement('div');
-        statsContainer.className = 'stats-grid hidden';
-        cardText.parentNode.insertBefore(statsContainer, cardText.nextSibling);
+        const uiSlot = document.getElementById('custom-ui-slot');
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -237,27 +268,33 @@
                 if (data) {
                     cardTitle.textContent = data.title;
                     cardText.textContent = data.text;
+                    
+                    // Clear custom UI slots cleanly before reloading
+                    uiSlot.innerHTML = '';
 
-                    if (data.showMetrics) {
-                        statsContainer.innerHTML = '';
+                    // 1. Build Data Stat view dynamically
+                    if (data.type === "data") {
+                        const grid = document.createElement('div');
+                        grid.className = 'stats-grid';
                         data.metrics.forEach(metric => {
-                            const box = document.createElement('div');
-                            box.className = 'stat-box';
-                            box.innerHTML = `
-                                <div class="stat-value">${metric.value}</div>
-                                <div class="stat-label">${metric.label}</div>
+                            grid.innerHTML += `
+                                <div class="stat-box">
+                                    <div class="stat-value">${metric.value}</div>
+                                    <div class="stat-label">${metric.label}</div>
+                                </div>
                             `;
-                            statsContainer.appendChild(box);
                         });
-                        statsContainer.classList.remove('hidden');
-                    } else {
-                        statsContainer.classList.add('hidden');
+                        uiSlot.appendChild(grid);
+                    } 
+                    // 2. Build Documents reference attachment link
+                    else if (data.type === "documents") {
+                        const link = document.createElement('a');
+                        link.href = "https://github.com";
+                        link.target = "_blank";
+                        link.className = "doc-link";
+                        link.innerHTML = "View Study License & References &rarr;";
+                        uiSlot.appendChild(link);
                     }
-                }
-            });
-        });
-    </script>
-
-</body>
-</html>
-
+                    // 3. Build What's Next list schedule layout
+                    else if (data.type === "timeline") {
+                        const list = document.createElement('ul');
