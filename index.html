@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stasis Reader - The Easy Reader</title>
+  <script src="https://jsdelivr.net"></script>
   <style>
     /* Reset default page spacing */
     body {
@@ -22,7 +23,7 @@
     .app-container {
       width: 100%;
       max-width: 400px;
-      padding: 20px;
+      padding: 15px;
       box-sizing: border-box;
     }
 
@@ -54,17 +55,26 @@
       font-weight: bold;
     }
 
-    /* Interactive Navigation Tabs */
+    /* FIX: Added overflow, scrolling, and gap spacing to prevent text crowding inside Wix */
     .nav-tabs {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
+      gap: 16px;
       font-size: 13px;
       color: #888;
-      padding-bottom: 10px;
+      padding-bottom: 12px;
       cursor: pointer;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    /* Hide scrollbar lines for a cleaner appearance on mobile */
+    .nav-tabs::-webkit-scrollbar {
+      display: none;
     }
     .tab {
       transition: color 0.2s;
+      padding-bottom: 8px;
     }
     .tab:hover {
       color: #ccc;
@@ -73,7 +83,6 @@
       color: #ff6600;
       font-weight: bold;
       border-bottom: 2px solid #ff6600;
-      padding-bottom: 10px;
     }
 
     /* Progress Control Bar Section */
@@ -117,6 +126,7 @@
       border-radius: 12px;
       border: 1px solid #222;
       min-height: 200px;
+      box-sizing: border-box;
     }
     
     /* View Panel - Toggled hidden/visible by JavaScript */
@@ -161,6 +171,28 @@
     .loop-label {
       color: #ff6600;
       font-weight: bold;
+    }
+    
+    /* Input adjustments for the dynamic sub-log */
+    .log-input {
+      width: 100%;
+      background: #111;
+      border: 1px solid #333;
+      color: white;
+      padding: 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    .log-btn {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -237,7 +269,7 @@
       <!-- Panel 4: What's Next -->
       <div class="view-panel" id="panel-4">
         <h3 class="card-title">Future Operations</h3>
-        <p class="card-body">Expanding the longitudinal tracking window past year 9, onboarding next-gen atmospheric vault samples, and modeling metabolic stasis via machine learning curves.</p>
+        <p class="card-body">Expanding the longitudinal tracking window past year 9, onboarding next-gen atmospheric vail samples, and modeling metabolic stasis via machine learning curves.</p>
         <div class="status-pass" style="color: #ff6600;">Next Milestones: Scheduled Q3 2026</div>
       </div>
 
@@ -259,7 +291,7 @@
       { date: "2018-10-12", action: "Harvest & sun-drying phase finished in Merced, CA." },
       { date: "2021-11-04", action: "3-Year mass spectrometry verification check passed." },
       { date: "2024-10-15", action: "6-Year deep metabolic stasis audit fully completed." },
-      { date: "2027-06-21", action: "9-Year final sample run: COA #USG-2018Q5L2 verified." }
+      { date: "2026-06-21", action: "9-Year final sample run: COA #USG-2018Q5L2 verified." }
     ];
 
     // Build the Data Loop UI elements
@@ -295,27 +327,4 @@
     function updateAppView(targetIndex) {
       currentActiveIndex = targetIndex;
 
-      // Update Navigation Tab styles
-      tabElements.forEach((tab, i) => {
-        if (i === currentActiveIndex) {
-          tab.classList.add('tab-active');
-        } else {
-          tab.classList.remove('tab-active');
-        }
-      });
 
-      // Update Card Visibility panels
-      panelElements.forEach((panel, i) => {
-        if (i === currentActiveIndex) {
-          panel.classList.add('active-panel');
-        } else {
-          panel.classList.remove('active-panel');
-        }
-      });
-
-      // Update Orange Progress Bar Width percentage
-      const progressPercent = ((currentActiveIndex + 1) / totalPanels) * 100;
-      progressBar.style.width = progressPercent + '%';
-    }
-
-    // Bind Click events directly to Tab targets
