@@ -115,6 +115,40 @@
             color: #00ff66;
             font-weight: bold;
         }
+
+        /* 6. Dynamic 3-Column Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-cols: repeat(3, 1fr); 
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .stat-box {
+            background: #262626;
+            border-left: 3px solid #ff6600; 
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -165,7 +199,13 @@
             },
             "Data": {
                 title: "Metabolic Data Metrics",
-                text: "View live stability metrics, active compound tracking charts, and humidity control logs over the 9-year testing timeline."
+                text: "Live stability track logs over the 9-year testing timeline.",
+                showMetrics: true, 
+                metrics: [
+                    { value: "95.4%", label: "Curcumin Stasis" },
+                    { value: "0.02%", label: "Moisture Cap" },
+                    { value: "9 Years", label: "Dormancy Log" }
+                ]
             },
             "Log": {
                 title: "Activity Log",
@@ -181,15 +221,38 @@
         const cardTitle = document.querySelector('.info-card h2');
         const cardText = document.querySelector('.info-card p');
 
+        // Create container for stats boxes
+        let statsContainer = document.createElement('div');
+        statsContainer.className = 'stats-grid hidden';
+        cardText.parentNode.insertBefore(statsContainer, cardText.nextSibling);
+
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 document.querySelector('.tab.active').classList.remove('active');
                 tab.classList.add('active');
 
                 const tabName = tab.textContent;
-                if (tabData[tabName]) {
-                    cardTitle.textContent = tabData[tabName].title;
-                    cardText.textContent = tabData[tabName].text;
+                const data = tabData[tabName];
+
+                if (data) {
+                    cardTitle.textContent = data.title;
+                    cardText.textContent = data.text;
+
+                    if (data.showMetrics) {
+                        statsContainer.innerHTML = '';
+                        data.metrics.forEach(metric => {
+                            const box = document.createElement('div');
+                            box.className = 'stat-box';
+                            box.innerHTML = `
+                                <div class="stat-value">${metric.value}</div>
+                                <div class="stat-label">${metric.label}</div>
+                            `;
+                            statsContainer.appendChild(box);
+                        });
+                        statsContainer.classList.remove('hidden');
+                    } else {
+                        statsContainer.classList.add('hidden');
+                    }
                 }
             });
         });
