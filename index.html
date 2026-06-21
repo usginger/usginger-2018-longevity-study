@@ -1,176 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Easy Reader • Stasis Reader</title>
-  <link rel="manifest" href="app-manifest.json">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <style>
-    body { background: #0a0a0a; color: #e5e5e5; }
-    .card { background: #1a1a1a; }
-    input, select, textarea { background: #111; border: 1px solid #333; }
-    input:focus, select:focus, textarea:focus { border-color: #f97316; outline: none; }
-    .nav-btn { transition: all 0.2s ease; }
-    .nav-active { color: #f97316; border-bottom: 2px solid #f97316; }
-    .section { display: none; }
-    .section.active { display: block; }
-    .toast {
-      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-      background: #f97316; color: black; padding: 12px 24px; border-radius: 9999px;
-      font-weight: 600; display: none; z-index: 9999;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stasis Reader - The Easy Reader</title>
+    <style>
+        /* Base Screen Setup */
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        /* 1. Title Layout */
+        h1.title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* 2. Responsive Mobile Tab Bar */
+        .navigation-tabs {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto; 
+            padding-bottom: 8px;
+            scrollbar-width: none; 
+        }
+        .navigation-tabs::-webkit-scrollbar {
+            display: none; 
+        }
+
+        .tab {
+            color: #a0a0a0;
+            text-decoration: none;
+            font-size: 1rem;
+            white-space: nowrap; 
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+        .tab.active {
+            color: #ff6600;
+            font-weight: bold;
+            border-bottom: 2px solid #ff6600;
+        }
+
+        /* 3. Slider Arrow Buttons with Large Touch Targets */
+        .slider-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #222;
+            height: 4px;
+            margin: 15px 0;
+            position: relative;
+        }
+        .slider-bar {
+            background: #ff6600;
+            height: 100%;
+            width: 40%;
+        }
+        .arrow-btn {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 4px;
+            width: 36px;       
+            height: 36px;      
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            top: -16px;
+        }
+        .arrow-prev { left: -10px; }
+        .arrow-next { right: -10px; }
+
+        /* 4. Display Content Card Layout */
+        .info-card {
+            background-color: #1a1a1a;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .info-card h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        .info-card p {
+            color: #cccccc;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        /* 5. Stats and Meta Labels */
+        .meta-data {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+        .status-pass {
+            color: #00ff66;
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body class="max-w-md mx-auto p-4">
+<body>
 
-  <!-- Header -->
-  <div class="mb-4 px-1">
-    <div class="flex items-center gap-3 mb-2">
-      <div class="w-9 h-9 bg-orange-500 rounded flex items-center justify-center">
-        <i class="fa-solid fa-book text-white text-xl"></i>
-      </div>
-      <div class="font-bold text-xl">Stasis Reader ©</div>
-    </div>
+    <div class="app-container">
+        <!-- Main Header -->
+        <h1 class="title">The Easy Reader</h1>
 
-    <div class="text-center">
-      <h1 class="text-4xl font-bold tracking-tighter">The Easy Reader</h1>
-    </div>
+        <!-- Navigation Tab Menu Bar -->
+        <nav class="navigation-tabs">
+            <div class="tab active">Overview</div>
+            <div class="tab">Documents</div>
+            <div class="tab">Data</div>
+            <div class="tab">Log</div>
+            <div class="tab">What's Next</div>
+        </nav>
 
-    <!-- Install App Button -->
-    <div class="text-center mt-4">
-      <button id="installBtn" 
-              class="hidden bg-orange-500 hover:bg-orange-600 text-black font-semibold px-6 py-2 rounded-2xl flex items-center gap-2 mx-auto">
-        <i class="fa-solid fa-download"></i>
-        <span>Install App</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Navigation Tabs -->
-  <div class="flex border-b border-zinc-800 px-1 overflow-x-auto text-sm mb-6">
-    <button onclick="showSection('overview')" class="nav-btn px-5 py-3 font-medium nav-active" data-section="overview">Overview</button>
-    <button onclick="showSection('documents')" class="nav-btn px-5 py-3 font-medium" data-section="documents">Documents</button>
-    <button onclick="showSection('data')" class="nav-btn px-5 py-3 font-medium" data-section="data">Data</button>
-    <button onclick="showSection('log')" class="nav-btn px-5 py-3 font-medium" data-section="log">Log</button>
-    <button onclick="showSection('next')" class="nav-btn px-5 py-3 font-medium" data-section="next">What's Next</button>
-  </div>
-
-  <!-- OVERVIEW -->
-  <div id="overview" class="section active">
-    <div class="card rounded-2xl p-5">
-      <h2 class="font-semibold text-xl mb-3">9-Year Metabolic Stasis Study</h2>
-      <p class="text-gray-300 mb-4">A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.</p>
-    </div>
-  </div>
-
-  <!-- DOCUMENTS -->
-  <div id="documents" class="section">
-    <div class="card rounded-2xl p-5">
-      <h2 class="font-semibold mb-4">Documents</h2>
-      <div class="space-y-3 text-sm">
-        <a href="US%20Ginger%20-%20Collated%20Certificates%20of%20AnalysisLot2.pdf" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
-          <i class="fa-solid fa-file-pdf text-red-400"></i> Collated Certificates of Analysis (Lot 2)
-        </a>
-        <a href="VERIFIED_COA_USG-2018Q5L2.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
-          <i class="fa-solid fa-file-lines"></i> Verified COA Record
-        </a>
-        <a href="STORAGE_PROTOCOL.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
-          <i class="fa-solid fa-file-lines"></i> 9-Year Storage Protocol
-        </a>
-        <a href="process.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
-          <i class="fa-solid fa-file-lines"></i> Production & Microclimate Process
-        </a>
-        <a href="LONGEVITY_SCIENCE.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
-          <i class="fa-solid fa-file-lines"></i> Longevity Science Framework
-        </a>
-        <a href="README.md" class="flex items-center gap-2 hover:text-orange-400" target="_blank">
-          <i class="fa-solid fa-file-lines"></i> Full Repository README
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- DATA -->
-  <div id="data" class="section">
-    <div class="card rounded-2xl p-5">
-      <h2 class="font-semibold mb-4">Data & Charts</h2>
-      <div class="mb-4">
-        <p class="text-sm text-gray-400 mb-2">Curcuminoid Density & Metabolic Stasis Retention (2017–2026)</p>
-        <img src="docs/potency_spike_trends.png" alt="Curcuminoid & Stasis Trends" class="rounded-xl w-full border border-zinc-700">
-        <p class="text-xs text-gray-500 mt-1">2018 breakthrough highlighted (+110% curcuminoid density leap)</p>
-      </div>
-      <div class="text-xs text-gray-400">
-        Interactive charts coming soon.
-      </div>
-    </div>
-  </div>
-
-  <!-- LOG (Integrated) -->
-  <div id="log" class="section">
-    <!-- Daily Log Form -->
-    <div class="card rounded-2xl p-5 mb-6">
-      <div class="font-semibold mb-4 flex items-center gap-2 text-lg">
-        <i class="fa-solid fa-leaf text-orange-400"></i> 
-        <span>Daily Log</span>
-      </div>
-
-      <!-- Form fields -->
-      <div class="mb-4">
-        <label class="text-sm text-gray-400 block mb-1">Type</label>
-        <select id="type" class="w-full p-3 rounded-xl text-lg">
-          <option value="Sun-dried Turmeric Cubes (2018 Merced)">🌿 Sun-dried Turmeric Cubes (2018 Merced)</option>
-          <option value="Turmeric Powder">Turmeric Powder</option>
-          <option value="Fresh Ginger">Fresh Ginger</option>
-          <option value="Both">Both (Ginger + Turmeric)</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="grid grid-cols-2 gap-3 mb-4">
-        <div>
-          <label class="text-sm text-gray-400 block mb-1">Dose</label>
-          <input id="dose" type="number" step="0.1" placeholder="2.5" class="w-full p-3 rounded-xl text-lg">
+        <!-- Slider Scale Line Controls -->
+        <div class="slider-controls">
+            <button class="arrow-btn arrow-prev">&#9664;</button>
+            <div class="slider-bar"></div>
+            <button class="arrow-btn arrow-next">&#9654;</button>
         </div>
-        <div>
-          <label class="text-sm text-gray-400 block mb-1">Unit</label>
-          <select id="unit" class="w-full p-3 rounded-xl text-lg">
-            <option value="g">grams</option>
-            <option value="cubes">cubes</option>
-            <option value="tsp">tsp</option>
-          </select>
+
+        <!-- Central Information Card -->
+        <div class="info-card">
+            <h2>9-Year Metabolic Stasis Study</h2>
+            <p>A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.</p>
+            
+            <div class="meta-data">
+                <div><strong>COA:</strong> USG-2018Q5L2</div>
+                <div><strong>Location:</strong> Merced, California</div>
+                <div><strong>Status:</strong> <span class="status-pass">PASS — Zero Contamination</span></div>
+            </div>
         </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-3 mb-4">
-        <div>
-          <label class="text-sm text-gray-400 block mb-1">Systolic</label>
-          <input id="systolic" type="number" placeholder="120" class="w-full p-3 rounded-xl text-lg">
-        </div>
-        <div>
-          <label class="text-sm text-gray-400 block mb-1">Diastolic</label>
-          <input id="diastolic" type="number" placeholder="80" class="w-full p-3 rounded-xl text-lg">
-        </div>
-      </div>
-
-      <div class="mb-4">
-        <label class="text-sm text-gray-400 block mb-1">Heart Rate (bpm)</label>
-        <input id="hr" type="number" placeholder="72" class="w-full p-3 rounded-xl text-lg">
-      </div>
-
-      <div class="mb-5">
-        <label class="text-sm text-gray-400 block mb-1">Notes</label>
-        <textarea id="notes" rows="2" placeholder="How are you feeling?" class="w-full p-3 rounded-xl resize-y"></textarea>
-      </div>
-
-      <button onclick="saveLog()" class="w-full bg-orange-500 hover:bg-orange-600 text-black font-bold py-4 rounded-2xl text-lg flex items-center justify-center gap-2">
-        <i class="fa-solid fa-save"></i>
-        <span>SAVE LOG</span>
-      </button>
     </div>
 
-    <!-- Stats -->
-    <div class="grid grid-cols-3 gap-3 mb-6">
-      <div class
+    <!-- Click Control Logic System -->
+    <script>
+        const tabData = {
+            "Overview": {
+                title: "9-Year Metabolic Stasis Study",
+                text: "A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California."
+            },
+            "Documents": {
+                title: "Study Documents",
+                text: "Access the original research papers, lab logs, and official certificates of analysis for the 2018 harvest samples."
+            },
+            "Data": {
+                title: "Metabolic Data Metrics",
+                text: "View live stability metrics, active compound tracking charts, and humidity control logs over the 9-year testing timeline."
+            },
+            "Log": {
+                title: "Activity Log",
+                text: "System checks, environment updates, and physical sample inspections recorded by laboratory sensors."
+            },
+            "What's Next": {
+                title: "Future Testing Phase",
+                text: "Plans for expanding structural stasis modeling and opening next-generation testing phases for longer crop dormancy tracking."
+            }
+        };
+
+        const tabs = document.querySelectorAll('.tab');
+        const cardTitle = document.querySelector('.info-card h2');
+        const cardText = document.querySelector('.info-card p');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelector('.tab.active').classList.remove('active');
+                tab.classList.add('active');
+
+                const tabName = tab.textContent;
+                if (tabData[tabName]) {
+                    cardTitle.textContent = tabData[tabName].title;
+                    cardText.textContent = tabData[tabName].text;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
