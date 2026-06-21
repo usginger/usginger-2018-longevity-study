@@ -61,6 +61,13 @@
       font-size: 13px;
       color: #888;
       padding-bottom: 10px;
+      cursor: pointer;
+    }
+    .tab {
+      transition: color 0.2s;
+    }
+    .tab:hover {
+      color: #ccc;
     }
     .tab-active {
       color: #ff6600;
@@ -83,6 +90,10 @@
       border-radius: 4px;
       font-weight: bold;
       cursor: pointer;
+      user-select: none;
+    }
+    .slider-btn:active {
+      background: #ccc;
     }
     .track-bg {
       flex-grow: 1;
@@ -92,19 +103,30 @@
       border-radius: 2px;
     }
     .track-fill {
-      width: 35%;
+      width: 20%;
       height: 100%;
       background: #ff6600;
       border-radius: 2px;
+      transition: width 0.3s ease;
     }
 
-    /* Core Study Information Card */
+    /* Core Card Display Container */
     .content-card {
       background-color: #161616;
       padding: 20px;
       border-radius: 12px;
       border: 1px solid #222;
+      min-height: 200px;
     }
+    
+    /* View Panel - Toggled hidden/visible by JavaScript */
+    .view-panel {
+      display: none;
+    }
+    .view-panel.active-panel {
+      display: block;
+    }
+
     .card-title {
       font-size: 18px;
       margin: 0 0 12px 0;
@@ -126,13 +148,27 @@
       font-weight: bold;
       margin-top: 5px;
     }
+
+    /* List Loops Styling for Data/Log rows */
+    .loop-item {
+      padding: 8px 0;
+      border-bottom: 1px solid #222;
+      font-size: 13px;
+    }
+    .loop-item:last-child {
+      border-bottom: none;
+    }
+    .loop-label {
+      color: #ff6600;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
   <div class="app-container">
     
-    <!-- Restored Stasis Reader Header -->
+    <!-- Restored Stasis Reader Header with Copyright Sign -->
     <div class="brand-header">
       <span class="brand-icon">📙</span>
       <span class="brand-text">Stasis Reader ©</span>
@@ -142,38 +178,144 @@
     <h2 class="page-title">The Easy Reader</h2>
 
     <!-- Top Navigation Menu Selection -->
-    <div class="nav-tabs">
-      <span class="tab-active">Overview</span>
-      <span>Documents</span>
-      <span>Data</span>
-      <span>Log</span>
-      <span>What's Next</span>
+    <div class="nav-tabs" id="navTabs">
+      <span class="tab tab-active" data-index="0">Overview</span>
+      <span class="tab" data-index="1">Documents</span>
+      <span class="tab" data-index="2">Data</span>
+      <span class="tab" data-index="3">Log</span>
+      <span class="tab" data-index="4">What's Next</span>
     </div>
 
     <!-- Active Reading Timeline Controls -->
     <div class="progress-bar-container">
-      <button class="slider-btn">◀</button>
+      <button class="slider-btn" id="prevBtn">◀</button>
       <div class="track-bg">
-        <div class="track-fill"></div>
+        <div class="track-fill" id="progressBar"></div>
       </div>
-      <button class="slider-btn">▶</button>
+      <button class="slider-btn" id="nextBtn">▶</button>
     </div>
 
-    <!-- Main Laboratory Research Summary View -->
+    <!-- Card Display View Panels -->
     <div class="content-card">
-      <h3 class="card-title">9-Year Metabolic Stasis Study</h3>
-      <p class="card-body">
-        A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.
-      </p>
       
-      <div class="metadata-list">
-        <div><strong>COA:</strong> USG-2018Q5L2</div>
-        <div><strong>Location:</strong> Merced, California</div>
-        <div class="status-pass">Status: PASS — Zero Contamination</div>
+      <!-- Panel 0: Overview -->
+      <div class="view-panel active-panel" id="panel-0">
+        <h3 class="card-title">9-Year Metabolic Stasis Study</h3>
+        <p class="card-body">
+          A longitudinal study on the exceptional stability of bioactive compounds in sun-dried turmeric cubes from the 2018 harvest in Merced, California.
+        </p>
+        <div class="metadata-list">
+          <div><strong>COA:</strong> USG-2018Q5L2</div>
+          <div><strong>Location:</strong> Merced, California</div>
+          <div class="status-pass">Status: PASS — Zero Contamination</div>
+        </div>
       </div>
+
+      <!-- Panel 1: Documents -->
+      <div class="view-panel" id="panel-1">
+        <h3 class="card-title">Project Documents</h3>
+        <p class="card-body">Official records detailing the sun-dried curation process, chemical analytics setup, and long-term climate tracking sheets.</p>
+        <div class="loop-item">📄 Certificate of Analysis (USG-2018Q5L2)</div>
+        <div class="loop-item">📄 Curation & Sun-Drying Protocol SOP</div>
+        <div class="loop-item">📄 Lab Sanitation & Environmental Audit Report</div>
+      </div>
+
+      <!-- Panel 2: Data Loop Panel -->
+      <div class="view-panel" id="panel-2">
+        <h3 class="card-title">Stasis Metrics Loop</h3>
+        <p class="card-body">Real-time array mapping of active curcuminoid retention and baseline moisture levels across 9 storage intervals.</p>
+        <div id="dataLoopContainer"></div>
+      </div>
+
+      <!-- Panel 3: Log Loop Panel -->
+      <div class="view-panel" id="panel-3">
+        <h3 class="card-title">Activity Timeline Log</h3>
+        <p class="card-body">System logs tracking quality checkpoints, physical stability reviews, and digital archival updates.</p>
+        <div id="logLoopContainer"></div>
+      </div>
+
+      <!-- Panel 4: What's Next -->
+      <div class="view-panel" id="panel-4">
+        <h3 class="card-title">Future Operations</h3>
+        <p class="card-body">Expanding the longitudinal tracking window past year 9, onboarding next-gen atmospheric vault samples, and modeling metabolic stasis via machine learning curves.</p>
+        <div class="status-pass" style="color: #ff6600;">Next Milestones: Scheduled Q3 2026</div>
+      </div>
+
     </div>
 
   </div>
 
-</body>
-</html>
+  <!-- Interactive JavaScript Logic Engines -->
+  <script>
+    // --- PART 1: DATA AND LOG ARRAYS (Interactive Loops) ---
+    const stasisDataArray = [
+      { year: "Year 1", curcumin: "99.8%", moisture: "4.2%", stability: "Stable" },
+      { year: "Year 3", curcumin: "99.5%", moisture: "4.3%", stability: "Stable" },
+      { year: "Year 6", curcumin: "99.2%", moisture: "4.1%", stability: "Stasis" },
+      { year: "Year 9", curcumin: "99.1%", moisture: "4.2%", stability: "Stasis" }
+    ];
+
+    const historicalLogsArray = [
+      { date: "2018-10-12", action: "Harvest & sun-drying phase finished in Merced, CA." },
+      { date: "2021-11-04", action: "3-Year mass spectrometry verification check passed." },
+      { date: "2024-10-15", action: "6-Year deep metabolic stasis audit fully completed." },
+      { date: "2027-06-21", action: "9-Year final sample run: COA #USG-2018Q5L2 verified." }
+    ];
+
+    // Build the Data Loop UI elements
+    const dataContainer = document.getElementById('dataLoopContainer');
+    stasisDataArray.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'loop-item';
+      row.innerHTML = `<span class="loop-label">${item.year}:</span> Retained ${item.curcumin} Curcumin | H2O: ${item.moisture} | [${item.stability}]`;
+      dataContainer.appendChild(row);
+    });
+
+    // Build the Log Loop UI elements
+    const logContainer = document.getElementById('logLoopContainer');
+    historicalLogsArray.forEach(log => {
+      const row = document.createElement('div');
+      row.className = 'loop-item';
+      row.innerHTML = `<span class="loop-label">[${log.date}]</span> ${log.action}`;
+      logContainer.appendChild(row);
+    });
+
+
+    // --- PART 2: NAVIGATION & SLIDER LOGIC ---
+    let currentActiveIndex = 0;
+    const totalPanels = 5;
+
+    const tabElements = document.querySelectorAll('.tab');
+    const panelElements = document.querySelectorAll('.view-panel');
+    const progressBar = document.getElementById('progressBar');
+    const prevButton = document.getElementById('prevBtn');
+    const nextButton = document.getElementById('nextBtn');
+
+    // Function to update the page view smoothly
+    function updateAppView(targetIndex) {
+      currentActiveIndex = targetIndex;
+
+      // Update Navigation Tab styles
+      tabElements.forEach((tab, i) => {
+        if (i === currentActiveIndex) {
+          tab.classList.add('tab-active');
+        } else {
+          tab.classList.remove('tab-active');
+        }
+      });
+
+      // Update Card Visibility panels
+      panelElements.forEach((panel, i) => {
+        if (i === currentActiveIndex) {
+          panel.classList.add('active-panel');
+        } else {
+          panel.classList.remove('active-panel');
+        }
+      });
+
+      // Update Orange Progress Bar Width percentage
+      const progressPercent = ((currentActiveIndex + 1) / totalPanels) * 100;
+      progressBar.style.width = progressPercent + '%';
+    }
+
+    // Bind Click events directly to Tab targets
