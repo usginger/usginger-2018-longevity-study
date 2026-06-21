@@ -13,5 +13,8 @@
   "background_color": "#0a0a0a",
   "theme_color": "#f97316",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "agricultural_provenance": {
+    "storage_id": "STASIS-2018-MERCED-01"
+  }
 }
