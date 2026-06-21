@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Easy Reader • Daily Log</title>
   <link rel="manifest" href="app-manifest.json">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://tailwindcss.com"></script>
+  <script src="https://jsdelivr.net"></script>
+  <link rel="stylesheet" href="https://cloudflare.com">
   <style>
     body { background: #0a0a0a; color: #e5e5e5; }
     .card { background: #1a1a1a; }
@@ -22,7 +22,7 @@
 </head>
 <body class="max-w-md mx-auto p-4">
 
-  <!-- Header -->
+  <!-- Header Section with Brand Title -->
   <div class="mb-4">
     <div class="flex items-center gap-3 mb-1">
       <div class="w-9 h-9 bg-orange-500 rounded flex items-center justify-center">
@@ -37,7 +37,7 @@
       <p class="text-sm text-gray-400 mt-0.5">Daily Log</p>
     </div>
 
-    <!-- Install App Button -->
+    <!-- Install App Button (PWA Trigger Support) -->
     <div class="text-center mt-3">
       <button id="installBtn" 
               class="hidden bg-orange-500 hover:bg-orange-600 text-black font-semibold px-5 py-2 rounded-2xl text-sm flex items-center gap-2 mx-auto">
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <!-- Back button -->
+  <!-- Back button to main panel -->
   <div class="mb-5">
     <button onclick="window.location.href='index.html'" class="flex items-center gap-x-2 text-sm text-zinc-400 hover:text-white">
       <i class="fa-solid fa-arrow-left"></i>
@@ -55,14 +55,14 @@
     </button>
   </div>
 
-  <!-- Daily Log Form -->
+  <!-- Daily Log Input Form Fields -->
   <div class="card rounded-2xl p-5 mb-6">
     <div class="font-semibold mb-4 flex items-center gap-2 text-lg">
       <i class="fa-solid fa-leaf text-orange-400"></i> 
       <span>Daily Log</span>
     </div>
 
-    <!-- Type -->
+    <!-- Type Selection -->
     <div class="mb-4">
       <label class="text-sm text-gray-400 block mb-1">Type</label>
       <select id="type" class="w-full p-3 rounded-xl text-lg">
@@ -74,7 +74,7 @@
       </select>
     </div>
 
-    <!-- Dose + Unit -->
+    <!-- Dose + Unit Settings -->
     <div class="grid grid-cols-2 gap-3 mb-4">
       <div>
         <label class="text-sm text-gray-400 block mb-1">Dose</label>
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <!-- Blood Pressure -->
+    <!-- Blood Pressure Parameters -->
     <div class="grid grid-cols-2 gap-3 mb-4">
       <div>
         <label class="text-sm text-gray-400 block mb-1">Systolic</label>
@@ -102,13 +102,13 @@
       </div>
     </div>
 
-    <!-- Heart Rate -->
+    <!-- Heart Rate Tracking -->
     <div class="mb-4">
       <label class="text-sm text-gray-400 block mb-1">Heart Rate (bpm)</label>
       <input id="hr" type="number" placeholder="72" class="w-full p-3 rounded-xl text-lg">
     </div>
 
-    <!-- Notes -->
+    <!-- Qualitative Notes -->
     <div class="mb-5">
       <label class="text-sm text-gray-400 block mb-1">Notes</label>
       <textarea id="notes" rows="2" placeholder="How are you feeling?" class="w-full p-3 rounded-xl resize-y"></textarea>
@@ -120,7 +120,7 @@
     </button>
   </div>
 
-  <!-- Stats -->
+  <!-- Historical Aggregated Stats Indicators -->
   <div class="grid grid-cols-3 gap-3 mb-6">
     <div class="card rounded-2xl p-4 text-center">
       <div class="text-xs text-gray-400">STREAK</div>
@@ -137,13 +137,13 @@
     </div>
   </div>
 
-  <!-- Chart -->
+  <!-- Chart Trend Display Board -->
   <div class="card rounded-2xl p-5 mb-6">
     <div class="font-semibold mb-4">Blood Pressure Trend</div>
     <canvas id="bpChart" height="120"></canvas>
   </div>
 
-  <!-- History + Download -->
+  <!-- History Tracking View + Export Framework -->
   <div>
     <div class="flex justify-between items-center mb-3 px-1">
       <div class="font-semibold">Recent Logs</div>
@@ -158,8 +158,10 @@
     <div id="history" class="space-y-3"></div>
   </div>
 
+  <!-- UI Toast Alerts -->
   <div id="toast" class="toast">Log saved successfully!</div>
 
+  <!-- Client-side Scripting Logic Engines -->
   <script>
     let chartInstance = null;
 
@@ -193,11 +195,11 @@
     function updateStats(logs) {
       document.getElementById('total-logs').textContent = logs.length;
       
-      // Streak
+      // Streak calculation trigger
       const streak = calculateStreak(logs);
       document.getElementById('streak').textContent = streak;
       
-      // Average BP
+      // Average calculation logic
       if (logs.length > 0) {
         const validLogs = logs.filter(l => l.systolic && l.diastolic);
         if (validLogs.length > 0) {
@@ -261,142 +263,4 @@
     function saveLog() {
       const type = document.getElementById('type').value;
       const dose = document.getElementById('dose').value;
-      const unit = document.getElementById('unit').value;
-      const systolic = document.getElementById('systolic').value;
-      const diastolic = document.getElementById('diastolic').value;
-      const hr = document.getElementById('hr').value;
-      const notes = document.getElementById('notes').value;
 
-      if (!dose) {
-        alert("Please enter a dose");
-        return;
-      }
-
-      const log = {
-        date: new Date().toISOString(),
-        type,
-        dose: parseFloat(dose),
-        unit,
-        systolic: systolic ? parseInt(systolic) : null,
-        diastolic: diastolic ? parseInt(diastolic) : null,
-        hr: hr ? parseInt(hr) : null,
-        notes
-      };
-
-      let logs = JSON.parse(localStorage.getItem('usginger_logs') || '[]');
-      logs.unshift(log); // newest first
-      localStorage.setItem('usginger_logs', JSON.stringify(logs));
-
-      showToast("Log saved successfully!");
-      
-      // Clear form
-      document.getElementById('dose').value = '';
-      document.getElementById('systolic').value = '';
-      document.getElementById('diastolic').value = '';
-      document.getElementById('hr').value = '';
-      document.getElementById('notes').value = '';
-
-      loadAll();
-    }
-
-    function downloadData() {
-      const logs = JSON.parse(localStorage.getItem('usginger_logs') || '[]');
-      if (logs.length === 0) {
-        alert("No logs to download");
-        return;
-      }
-      const dataStr = JSON.stringify(logs, null, 2);
-      const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-      
-      const exportFileDefaultName = `usginger_daily_logs_${new Date().toISOString().slice(0,10)}.json`;
-      
-      const linkElement = document.createElement('a');
-      linkElement.setAttribute('href', dataUri);
-      linkElement.setAttribute('download', exportFileDefaultName);
-      linkElement.click();
-    }
-
-    function clearAllLogs() {
-      if (confirm('Delete all logs? This cannot be undone.')) {
-        localStorage.removeItem('usginger_logs');
-        loadAll();
-        showToast("All logs cleared");
-      }
-    }
-
-    function renderHistory(logs) {
-      const container = document.getElementById('history');
-      container.innerHTML = '';
-
-      if (logs.length === 0) {
-        container.innerHTML = '<p class="text-sm text-gray-500 px-1">No logs yet. Start tracking!</p>';
-        return;
-      }
-
-      logs.slice(0, 10).forEach((log, index) => {
-        const date = new Date(log.date).toLocaleDateString('en-US', { 
-          month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' 
-        });
-        
-        const div = document.createElement('div');
-        div.className = 'card rounded-2xl p-4 text-sm';
-        div.innerHTML = `
-          <div class="flex justify-between items-start">
-            <div>
-              <div class="font-medium">${log.type}</div>
-              <div class="text-xs text-gray-400">${date}</div>
-            </div>
-            <div class="text-right">
-              <div>${log.dose} ${log.unit}</div>
-              ${log.systolic ? `<div class="text-xs">${log.systolic}/${log.diastolic} mmHg</div>` : ''}
-            </div>
-          </div>
-          ${log.notes ? `<div class="text-xs text-gray-400 mt-2">${log.notes}</div>` : ''}
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function loadAll() {
-      const logs = JSON.parse(localStorage.getItem('usginger_logs') || '[]');
-      updateStats(logs);
-      updateChart(logs);
-      renderHistory(logs);
-    }
-
-    function init() {
-      loadAll();
-    }
-
-    window.onload = init;
-
-    // PWA Install Button
-    let deferredPrompt;
-    const installBtn = document.getElementById('installBtn');
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.classList.remove('hidden');
-    });
-
-    installBtn.addEventListener('click', async () => {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      deferredPrompt = null;
-      installBtn.classList.add('hidden');
-    });
-
-    window.addEventListener('appinstalled', () => {
-      installBtn.classList.add('hidden');
-    });
-
-    // Service Worker
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
-      });
-    }
-  </script>
-</body>
-</html>
