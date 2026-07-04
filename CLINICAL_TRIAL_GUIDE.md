@@ -67,8 +67,8 @@ To ensure all users see these warnings, add this link to the top of your main `R
 *   **Subject Age:** 77
 *   **Regimen Dosage:** 250mg 
 *   **Matrix Source:** Merced, California Sun-Dried Turmeric (2018 Harvest Matrix)
-*   **Associated COA:** #usg-2018q5l2
-*   **Observation Timeline:** Reported July 2026 (Two weeks post-evaluation)
+*   **Associated COA:** #usg2018q5l2
+*   **Observation Timeline:** Reported July 2026 (Two weeks post evaluation)
 
 #### Documented Feedback
 Subject reported stable cognitive parameters. Recent physical brain imaging (MRI structural review) presented zero unexpected tissue loss, zero major blockages, and no visible structural abnormalities related to historical baseline expectations. 
@@ -77,6 +77,6 @@ Subject reported stable cognitive parameters. Recent physical brain imaging (MRI
 Standard clinical MRI scans assess macrostructural changes, brain volume, and vascular health. They do not map micro-level amyloid plaque distribution, which requires molecular imaging (such as an Amyloid PET scan). 
 
 #### Informal Status
-*   **Status:** ANECDOTAL_SUCCESS_LOGGED
-*   **Validation:** Unverified self-reported tracking. This data point is an informal longitudinal observation and is not part of an FDA-regulated clinical protocol.
+*   **Status:**ANECDOTAL_SUCCESS_LOGGED
+*   **Validation:**Unverified self-reported tracking. This data point is an informal longitudinal observation and is not part of an FDA-regulated clinical protocol.
 
