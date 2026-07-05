@@ -11,9 +11,84 @@
       "heavy_metals": "undetected",
       "pesticides": "negative",
       "chemical_fingerprint": "high-density-curcuminoid"
+    },
+    "pharmacokinetic_testing_parameters": {
+      "metric_01_cmax": "Maximum observed plasma concentration to verify systemic entry vs standard baseline.",
+      "metric_02_tmax": "Time to peak concentration to evaluate release stability and degradation resistance.",
+      "metric_03_auc": "Area Under the Curve to calculate total biometric compound exposure over a 24-hour window.",
+      "metric_04_glucuronidation_ratio": "Ratio of free active curcuminoids to deactivated liver metabolites."
     }
   },
   "informal_longitudinal_observations": [
+    {
+      "case_id": "USG-CASE-001",
+      "log_date": "2024-03-15",
+      "subject_demographics": {
+        "age": 0,
+        "baseline_cognitive_status": "PENDING_ARCHIVE_DATA"
+      },
+      "experimental_regimen": {
+        "daily_dosage_mg": 0,
+        "delivery_matrix": "California Sun-Dried Turmeric Matrix"
+      },
+      "reported_milestones": {
+        "evaluation_type": "PENDING_ENTRY",
+        "observed_abnormalities": null,
+        "unexpected_tissue_loss": null,
+        "vascular_blockages": null,
+        "patient_feedback_verbatim": "Archived entry template loaded."
+      },
+      "technical_caveats": {
+        "imaging_limitation": "Awaiting baseline evaluation criteria profiles.",
+        "fda_regulatory_status": "UNVERIFIED_ANECDOTAL_SUCCESS"
+      }
+    },
+    {
+      "case_id": "USG-CASE-002",
+      "log_date": "2024-11-22",
+      "subject_demographics": {
+        "age": 0,
+        "baseline_cognitive_status": "PENDING_ARCHIVE_DATA"
+      },
+      "experimental_regimen": {
+        "daily_dosage_mg": 0,
+        "delivery_matrix": "California Sun-Dried Turmeric Matrix"
+      },
+      "reported_milestones": {
+        "evaluation_type": "PENDING_ENTRY",
+        "observed_abnormalities": null,
+        "unexpected_tissue_loss": null,
+        "vascular_blockages": null,
+        "patient_feedback_verbatim": "Archived entry template loaded."
+      },
+      "technical_caveats": {
+        "imaging_limitation": "Awaiting baseline evaluation criteria profiles.",
+        "fda_regulatory_status": "UNVERIFIED_ANECDOTAL_SUCCESS"
+      }
+    },
+    {
+      "case_id": "USG-CASE-003",
+      "log_date": "2025-05-09",
+      "subject_demographics": {
+        "age": 0,
+        "baseline_cognitive_status": "PENDING_ARCHIVE_DATA"
+      },
+      "experimental_regimen": {
+        "daily_dosage_mg": 0,
+        "delivery_matrix": "California Sun-Dried Turmeric Matrix"
+      },
+      "reported_milestones": {
+        "evaluation_type": "PENDING_ENTRY",
+        "observed_abnormalities": null,
+        "unexpected_tissue_loss": null,
+        "vascular_blockages": null,
+        "patient_feedback_verbatim": "Archived entry template loaded."
+      },
+      "technical_caveats": {
+        "imaging_limitation": "Awaiting baseline evaluation criteria profiles.",
+        "fda_regulatory_status": "UNVERIFIED_ANECDOTAL_SUCCESS"
+      }
+    },
     {
       "case_id": "USG-CASE-004",
       "log_date": "2026-06-20",
@@ -39,3 +114,4 @@
     }
   ]
 }
+
