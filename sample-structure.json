@@ -1,12 +1,41 @@
-"dataset_reference": "usginger-2018-longevity-study",
-"data_module": "toxicology_and_contaminant_screening",
-"verification_source": "Fenton Wood Labs",
-"associated_coa": "usg-2018q5l2",
-"testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
-"global_status": "PASS_ZERO_CONTAMINATION",
-"agricultural_provenance": {
-  "cultivation_locale": "Merced, California, USA",
-  "harvest_year": 2018,
-  "storage_id": "STASIS-2018-MERCED-01",
-  "phenotypic_notes": "Significant increase in active curcuminoid density and potency compared to 2017 baseline"
+{
+  "repository_framework": "USGinger 2018 Longevity Study",
+  "batch_registry": {
+    "batch_id": "usg-2018q5l2",
+    "matrix_origin": "Merced, California, USA",
+    "harvest_year": 2018,
+    "lab_status": "PASS_ZERO_CONTAMINATION"
+  },
+  "formal_clinical_data": {
+    "toxicology_metrics": {
+      "heavy_metals": "undetected",
+      "pesticides": "negative",
+      "chemical_fingerprint": "high-density-curcuminoid"
+    }
+  },
+  "informal_longitudinal_observations": [
+    {
+      "case_id": "USG-CASE-004",
+      "log_date": "2026-06-20",
+      "subject_demographics": {
+        "age": 77,
+        "baseline_cognitive_status": "stable"
+      },
+      "experimental_regimen": {
+        "daily_dosage_mg": 250,
+        "delivery_matrix": "California Sun-Dried Turmeric Matrix"
+      },
+      "reported_milestones": {
+        "evaluation_type": "MRI Structural Review",
+        "observed_abnormalities": false,
+        "unexpected_tissue_loss": false,
+        "vascular_blockages": false,
+        "patient_feedback_verbatim": "my mri's do not show amaloy plaques"
+      },
+      "technical_caveats": {
+        "imaging_limitation": "Structural MRI evaluates macro-level tissue density and volume; micro-level amyloid-beta plaque tracking requires a distinct Molecular Amyloid PET scan or CSF validation.",
+        "fda_regulatory_status": "UNVERIFIED_ANECDOTAL_SUCCESS"
+      }
+    }
+  ]
 }
