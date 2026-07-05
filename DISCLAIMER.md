@@ -73,5 +73,5 @@ We welcome anonymous data submissions from self-experimenters and independent re
 
 
 ⚠️ **Important Notice:** This dataset is intended for open science tracking and non-clinical research documentation. Please review our official, comprehensive [Repository Medical Disclaimer](DISCLAIMER.md) before evaluating any logged observations or testing parameters.
-***
-*
+---
+
