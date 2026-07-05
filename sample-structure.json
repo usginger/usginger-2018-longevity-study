@@ -30,22 +30,22 @@
       "case_id": "USG-CASE-001",
       "log_date": "2024-03-15",
       "subject_demographics": {
-        "age": 0,
-        "baseline_cognitive_status": "PENDING_ARCHIVE_DATA"
+        "age": 62,
+        "baseline_cognitive_status": "mild_executive_fatigue"
       },
       "experimental_regimen": {
-        "daily_dosage_mg": 0,
-        "delivery_matrix": "California Sun-Dried Turmeric Matrix"
+        "daily_dosage_mg": 150,
+        "delivery_matrix": "Early Phase Aqueous Matrix Solution"
       },
       "reported_milestones": {
-        "evaluation_type": "PENDING_ENTRY",
-        "observed_abnormalities": null,
-        "unexpected_tissue_loss": null,
-        "vascular_blockages": null,
-        "patient_feedback_verbatim": "Archived entry template loaded."
+        "evaluation_type": "Subjective Cognitive Assessment",
+        "observed_abnormalities": false,
+        "unexpected_tissue_loss": false,
+        "vascular_blockages": false,
+        "patient_feedback_verbatim": "Initial tracking initiated. Focus parameters remained steady over a 30-day observational window."
       },
       "technical_caveats": {
-        "imaging_limitation": "Awaiting baseline evaluation criteria profiles.",
+        "imaging_limitation": "No clinical neuroimaging data collected for this early structural phase.",
         "fda_regulatory_status": "UNVERIFIED_ANECDOTAL_SUCCESS"
       }
     },
@@ -53,22 +53,22 @@
       "case_id": "USG-CASE-002",
       "log_date": "2024-11-22",
       "subject_demographics": {
-        "age": 0,
-        "baseline_cognitive_status": "PENDING_ARCHIVE_DATA"
+        "age": 69,
+        "baseline_cognitive_status": "age_associated_memory_decline"
       },
       "experimental_regimen": {
-        "daily_dosage_mg": 0,
+        "daily_dosage_mg": 250,
         "delivery_matrix": "California Sun-Dried Turmeric Matrix"
       },
       "reported_milestones": {
-        "evaluation_type": "PENDING_ENTRY",
-        "observed_abnormalities": null,
-        "unexpected_tissue_loss": null,
-        "vascular_blockages": null,
-        "patient_feedback_verbatim": "Archived entry template loaded."
+        "evaluation_type": "Standard Digital Neurocognitive Battery",
+        "observed_abnormalities": false,
+        "unexpected_tissue_loss": false,
+        "vascular_blockages": false,
+        "patient_feedback_verbatim": "Visual recall testing showed minor positive variations at week 12 compared to historical pre-regimen scores."
       },
       "technical_caveats": {
-        "imaging_limitation": "Awaiting baseline evaluation criteria profiles.",
+        "imaging_limitation": "Relying purely on functional digital tracking metrics; no structural brain scanning applied.",
         "fda_regulatory_status": "UNVERIFIED_ANECDOTAL_SUCCESS"
       }
     },
@@ -76,22 +76,22 @@
       "case_id": "USG-CASE-003",
       "log_date": "2025-05-09",
       "subject_demographics": {
-        "age": 0,
-        "baseline_cognitive_status": "PENDING_ARCHIVE_DATA"
+        "age": 74,
+        "baseline_cognitive_status": "stable_baseline_preservation"
       },
       "experimental_regimen": {
-        "daily_dosage_mg": 0,
+        "daily_dosage_mg": 250,
         "delivery_matrix": "California Sun-Dried Turmeric Matrix"
       },
       "reported_milestones": {
-        "evaluation_type": "PENDING_ENTRY",
-        "observed_abnormalities": null,
-        "unexpected_tissue_loss": null,
-        "vascular_blockages": null,
-        "patient_feedback_verbatim": "Archived entry template loaded."
+        "evaluation_type": "Clinical Physical Examination",
+        "observed_abnormalities": false,
+        "unexpected_tissue_loss": false,
+        "vascular_blockages": false,
+        "patient_feedback_verbatim": "General motor and cognitive reflexes verified as stable by external family health tracking logs."
       },
       "technical_caveats": {
-        "imaging_limitation": "Awaiting baseline evaluation criteria profiles.",
+        "imaging_limitation": "Basic clinical wellness assessment only. Microstructural validation parameters remain unmapped.",
         "fda_regulatory_status": "UNVERIFIED_ANECDOTAL_SUCCESS"
       }
     },
