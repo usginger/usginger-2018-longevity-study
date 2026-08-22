@@ -1,0 +1,46 @@
+{
+  "metadata_version": "1.0.0",
+  "associated_coa": "USG-2018Q5L2",
+  "global_status": "PASS_ZERO_CONTAMINATION",
+  "provenance": {
+    "cultivation_locale": "Merced, California, USA",
+    "harvest_year": 2018,
+    "processing_method": "Solar Dehydration / Agricultural Cube Matrix",
+    "stasis_duration_years": 9.0
+  },
+  "screening_analytics": {
+    "verification_source": "Fenton Wood Labs",
+    "testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
+    "last_tested_date": "2026-08-22",
+    "limits_of_detection_ppm": 0.001
+  },
+  "curcuminoid_profile": {
+    "curcumin_retention_pct": 98.42,
+    "compounds": [
+      {
+        "name": "Curcumin",
+        "cas_number": "458-37-7",
+        "detected_value_mg_g": 38.65
+      },
+      {
+        "name": "Demethoxycurcumin",
+        "cas_number": "22608-11-3",
+        "detected_value_mg_g": 11.20
+      },
+      {
+        "name": "Bisdemethoxycurcumin",
+        "cas_number": "33171-13-1",
+        "detected_value_mg_g": 6.45
+      }
+    ]
+  },
+  "contaminant_panels": {
+    "heavy_metals": [
+      { "element": "Arsenic (As)", "status": "ND (Not Detected)" },
+      { "element": "Cadmium (Cd)", "status": "ND (Not Detected)" },
+      { "element": "Lead (Pb)", "status": "ND (Not Detected)" },
+      { "element": "Mercury (Hg)", "status": "ND (Not Detected)" }
+    ],
+    "pesticides_residue": "Zero Residue Detected at LOD"
+  }
+}
