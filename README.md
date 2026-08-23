@@ -32,8 +32,8 @@ As an independent **Biotechnology R&D Consultation** firm, we leverage this 9-ye
 
 For technical inquiries or data licensing access, please open an issue or contact our advisory team directly.
 
-## layout: default
-title: "USGinger Longevity Study"
+layout: default
+## title: "USGinger Longevity Study"
 permalink: /
 ---
 
