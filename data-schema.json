@@ -48,6 +48,12 @@
           "type": "number",
           "example": 9.0
         }
+      },
+      "default": {
+        "storage_id": "STASIS-2018-MERCED-01",
+        "location": "Merced Valley",
+        "harvest_year": 2018,
+        "processing_method": "Solar Dehydration / Agricultural Cube Matrix"
       }
     },
     "screening_analytics": {
