@@ -1,8 +1,4 @@
 ---
-layout: default
-title: "USGinger Biotechnology R&D Consultation"
-
----
 
 # ☀ USGinger Longevity Hub
 
