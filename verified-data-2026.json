@@ -2,17 +2,13 @@
   "metadata_version": "1.0.0",
   "associated_coa": "USG-2018Q5L2",
   "global_status": "PASS_ZERO_CONTAMINATION",
-  
-  {
   "agricultural_provenance": {
+    "storage_id": "STASIS-2018-MERCED-01",
     "location": "Merced Valley",
     "harvest_year": 2018
-  }
-}
-
-    "processing_method": "Solar Dehydration / Agricultural Cube Matrix",
-    "stasis_duration_years": 9.0
   },
+  "processing_method": "Solar Dehydration / Agricultural Cube Matrix",
+  "stasis_duration_years": 9.0,
   "screening_analytics": {
     "verification_source": "Fenton Wood Labs",
     "testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
@@ -41,10 +37,22 @@
   },
   "contaminant_panels": {
     "heavy_metals": [
-      { "element": "Arsenic (As)", "status": "ND (Not Detected)" },
-      { "element": "Cadmium (Cd)", "status": "ND (Not Detected)" },
-      { "element": "Lead (Pb)", "status": "ND (Not Detected)" },
-      { "element": "Mercury (Hg)", "status": "ND (Not Detected)" }
+      {
+        "element": "Arsenic (As)",
+        "status": "ND (Not Detected)"
+      },
+      {
+        "element": "Cadmium (Cd)",
+        "status": "ND (Not Detected)"
+      },
+      {
+        "element": "Lead (Pb)",
+        "status": "ND (Not Detected)"
+      },
+      {
+        "element": "Mercury (Hg)",
+        "status": "ND (Not Detected)"
+      }
     ],
     "pesticides_residue": "Zero Residue Detected at LOD"
   }
