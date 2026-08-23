@@ -6,7 +6,7 @@
   "required": [
     "metadata_version",
     "associated_coa",
-    "provenance",
+    "agricultural_provenance",
     "screening_analytics",
     "curcuminoid_profile",
     "global_status"
@@ -24,34 +24,63 @@
       "type": "string",
       "enum": ["PASS_ZERO_CONTAMINATION", "FAIL_CONTAMINANTS_DETECTED"]
     },
-    "provenance": {
+    "agricultural_provenance": {
       "type": "object",
-      "required": ["cultivation_locale", "harvest_year", "processing_method"],
+      "required": ["storage_id", "location", "harvest_year", "processing_method"],
       "properties": {
-        "cultivation_locale": { "type": "string", "example": "Merced, California, USA" },
-        "harvest_year": { "type": "integer", "example": 2018 },
-        "processing_method": { "type": "string", "example": "Solar Dehydration / Agricultural Cube Matrix" },
-        "stasis_duration_years": { "type": "number", "example": 9.0 }
+        "storage_id": {
+          "type": "string",
+          "example": "STASIS-2018-MERCED-01"
+        },
+        "location": {
+          "type": "string",
+          "example": "Merced Valley"
+        },
+        "harvest_year": {
+          "type": "integer",
+          "example": 2018
+        },
+        "processing_method": {
+          "type": "string",
+          "example": "Solar Dehydration / Agricultural Cube Matrix"
+        },
+        "stasis_duration_years": {
+          "type": "number",
+          "example": 9.0
+        }
       }
     },
     "screening_analytics": {
       "type": "object",
       "required": ["verification_source", "testing_methodology", "last_tested_date"],
       "properties": {
-        "verification_source": { "type": "string", "example": "Fenton Wood Labs" },
-        "testing_methodology": { "type": "string", "example": "LC-MS-MS / GC-MS-MS Multi-Residue Screen" },
-        "last_tested_date": { "type": "string", "format": "date", "example": "2026-08-22" },
-        "limits_of_detection_ppm": { "type": "number", "example": 0.001 }
+        "verification_source": {
+          "type": "string",
+          "example": "Fenton Wood Labs"
+        },
+        "testing_methodology": {
+          "type": "string",
+          "example": "LC-MS-MS / GC-MS-MS Multi-Residue Screen"
+        },
+        "last_tested_date": {
+          "type": "string",
+          "format": "date",
+          "example": "2026-08-22"
+        },
+        "limits_of_detection_ppm": {
+          "type": "number",
+          "example": 0.001
+        }
       }
     },
     "curcuminoid_profile": {
       "type": "object",
       "required": ["curcumin_retention_pct", "compounds"],
       "properties": {
-        "curcumin_retention_pct": { 
-          "type": "number", 
+        "curcumin_retention_pct": {
+          "type": "number",
           "description": "Percentage of active compound retained relative to the 2018 baseline post-harvest measurement.",
-          "example": 98.4 
+          "example": 98.4
         },
         "compounds": {
           "type": "array",
@@ -59,15 +88,33 @@
             "type": "object",
             "required": ["name", "cas_number", "detected_value_mg_g"],
             "properties": {
-              "name": { "type": "string" },
-              "cas_number": { "type": "string" },
-              "detected_value_mg_g": { "type": "number" }
+              "name": {
+                "type": "string"
+              },
+              "cas_number": {
+                "type": "string"
+              },
+              "detected_value_mg_g": {
+                "type": "number"
+              }
             }
           },
           "default": [
-            { "name": "Curcumin", "cas_number": "458-37-7", "detected_value_mg_g": 0.0 },
-            { "name": "Demethoxycurcumin", "cas_number": "22608-11-3", "detected_value_mg_g": 0.0 },
-            { "name": "Bisdemethoxycurcumin", "cas_number": "33171-13-1", "detected_value_mg_g": 0.0 }
+            {
+              "name": "Curcumin",
+              "cas_number": "458-37-7",
+              "detected_value_mg_g": 0.0
+            },
+            {
+              "name": "Demethoxycurcumin",
+              "cas_number": "22608-11-3",
+              "detected_value_mg_g": 0.0
+            },
+            {
+              "name": "Bisdemethoxycurcumin",
+              "cas_number": "33171-13-1",
+              "detected_value_mg_g": 0.0
+            }
           ]
         }
       }
@@ -80,8 +127,14 @@
           "items": {
             "type": "object",
             "properties": {
-              "element": { "type": "string", "example": "Arsenic" },
-              "status": { "type": "string", "example": "ND (Not Detected)" }
+              "element": {
+                "type": "string",
+                "example": "Arsenic"
+              },
+              "status": {
+                "type": "string",
+                "example": "ND (Not Detected)"
+              }
             }
           }
         },
@@ -93,3 +146,4 @@
     }
   }
 }
+
