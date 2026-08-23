@@ -2,9 +2,14 @@
   "metadata_version": "1.0.0",
   "associated_coa": "USG-2018Q5L2",
   "global_status": "PASS_ZERO_CONTAMINATION",
-  "provenance": {
-    "cultivation_locale": "Merced, California, USA",
-    "harvest_year": 2018,
+  
+  {
+  "agricultural_provenance": {
+    "location": "Merced Valley",
+    "harvest_year": 2018
+  }
+}
+
     "processing_method": "Solar Dehydration / Agricultural Cube Matrix",
     "stasis_duration_years": 9.0
   },
