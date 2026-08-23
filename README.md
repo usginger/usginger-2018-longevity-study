@@ -4,7 +4,7 @@ title: "USGinger Longevity Study"
 permalink: /
 ---
 
-# ☀ USGinger Longevity Hub
+## ☀ USGinger Longevity Hub
 
 🔬 **Verification Status:** PASS_ZERO_CONTAMINATION  
 📜 **Primary Dataset:** Certificate of Analysis #USG-2018Q5L2  
@@ -36,4 +36,6 @@ As an independent **Biotechnology R&D Consultation** firm, we leverage this 9-ye
 
 For technical inquiries or data licensing access, please open an issue or contact our advisory team directly.
 
-}
+
+
+
