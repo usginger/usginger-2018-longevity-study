@@ -19,6 +19,27 @@ Sensitivity analysis reveals that the 8-year metabolic stasis coefficient holds 
 
 ---
 
+## 🧠 Neural Network Activation Functions
+
+To properly model the complex, non-linear biological degradation curves of the rhizome data, the architecture utilizes three specific activation functions across different layer stages:
+
+### 1. Swish (Hidden Layers)
+*   **Formula**: $f(x) = x \cdot \sigma(\beta x)$
+*   **Application**: Applied across all deep feature-extraction layers. 
+*   **Rationale**: Swish outperforms ReLU in deep networks mapping biological stasis by maintaining a smooth, non-monotonic curve. This prevents the "dying neuron" problem when processing highly zero-skewed nutrient degradation vectors from the Merced field data.
+
+### 2. Leaky ReLU (Transfer Learning Alignment Layer)
+*   **Formula**: $f(x) = \max(\alpha x, x)$ where $\alpha = 0.01$
+*   **Application**: Utilized specifically in the bridge layers where ginger baseline weights are adapted to turmeric variables.
+*   **Rationale**: By allowing a small, non-zero gradient when the unit is inactive, Leaky ReLU preserves low-level ambient data (such as trace soil chemistry values) that standard ReLU would otherwise discard.
+
+### 3. Sigmoid (Output Layer)
+*   **Formula**: $f(x) = \frac{1}{1 + e^{-x}}$
+*   **Application**: Final layer computation.
+*   **Rationale**: Because the longevity ratio is strictly bounded as a value between `0.0` (complete degradation) and `1.0` (perfect metabolic stasis), the Sigmoid function scales the final forecasting array output into a precise, readable percentage.
+
+---
+
 ## 📈 Future Training Goals
 
 * **Hyperparameter Tuning**: Optimize the regularization framework to better balance the noise-free control baseline with volatile environmental data.
