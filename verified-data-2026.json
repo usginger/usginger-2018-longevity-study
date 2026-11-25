@@ -1,59 +1,13 @@
 {
-  "metadata_version": "1.0.0",
-  "associated_coa": "USG-2018Q5L2",
-  "global_status": "PASS_ZERO_CONTAMINATION",
-  "agricultural_provenance": {
-    "storage_id": "STASIS-2018-MERCED-01",
-    "location": "Merced Valley",
-    "harvest_year": 2018
-  },
-  "processing_method": "Solar Dehydration / Agricultural Cube Matrix",
-  "stasis_duration_years": 9.0,
-  "screening_analytics": {
-    "verification_source": "Fenton Wood Labs",
-    "testing_methodology": "LC-MS-MS / GC-MS-MS Multi-Residue Screen",
-    "last_tested_date": "2026-08-22",
-    "limits_of_detection_ppm": 0.001
-  },
-  "curcuminoid_profile": {
-    "curcumin_retention_pct": 98.42,
-    "compounds": [
-      {
-        "name": "Curcumin",
-        "cas_number": "458-37-7",
-        "detected_value_mg_g": 38.65
-      },
-      {
-        "name": "Demethoxycurcumin",
-        "cas_number": "22608-11-3",
-        "detected_value_mg_g": 11.20
-      },
-      {
-        "name": "Bisdemethoxycurcumin",
-        "cas_number": "33171-13-1",
-        "detected_value_mg_g": 6.45
-      }
-    ]
-  },
-  "contaminant_panels": {
-    "heavy_metals": [
-      {
-        "element": "Arsenic (As)",
-        "status": "ND (Not Detected)"
-      },
-      {
-        "element": "Cadmium (Cd)",
-        "status": "ND (Not Detected)"
-      },
-      {
-        "element": "Lead (Pb)",
-        "status": "ND (Not Detected)"
-      },
-      {
-        "element": "Mercury (Hg)",
-        "status": "ND (Not Detected)"
-      }
-    ],
-    "pesticides_residue": "Zero Residue Detected at LOD"
-  }
+  "sample_id": "USG-2018Q5L2-RESPROUT-01",
+  "coa_reference": "USG-2018Q5L2",
+  "harvest_vintage": 2018,
+  "cultivation_locale": "Merced, California, USA",
+  "preservation_method": "Solar-Dehydrated Agricultural Cubes",
+  "stasis_break_date": "2026-01-12",
+  "dormancy_duration_years": 7.8,
+  "viability_status": "RESPROUTED_2026",
+  "exclude_from_dry_stasis_regression": true,
+  "active_growth_confirmed_date": "2026-11-25",
+  "notes": "Spontaneous lateral bud break and ongoing vegetative resprouting after nearly 8 years in ambient dry storage."
 }
