@@ -1,78 +1,35 @@
----
-layout: default
-title: "USGinger Longevity Study"
-permalink: /
----
 
-# 🌿 AI Longevity Forecasting Model: Merced Turmeric Study
+# 🌱 Biological Viability & Resprouting Log (2026)
 
-## ☀️ USGinger Longevity Hub
-
-🔬 **Verification Status:** PASS_ZERO_CONTAMINATION  
-📜 **Primary Dataset:** Certificate of Analysis #USG-2018Q5L2  
-🧬 **Core Focus:** 9-Year Historical Longevity & Curcuminoid Metabolic Stasis  
-💼 **Industry Classification:** Biotechnology R&D Consultation  
-
-This repository hosts a production-grade deep learning framework that leverages baseline data from the **2018 Ginger Longevity Study** to forecast the longevity ratio and metabolic stasis of solar-dehydrated turmeric (*Curcuma longa*) cubes harvested in Merced, CA.
+**Subject:** 2018 Vintage Sun-Dried Agricultural Cubes (*Zingiber officinale* / *Curcuma longa*)  
+**Baseline Reference:** COA #USG-2018Q5L2  
+**Stasis Break / Initial Resprouting Date:** January 12, 2026 (`2026-01-12`)  
+**Total Dormancy Duration:** ~7.5 – 8 Years  
+**Current Status:** Active Vegetative Resprouting (Ongoing as of November 2026)  
 
 ---
 
-## 🌾 The Core Insight
+## 🔬 Scientific Significance
 
-This repository archives the empirical stability data for sun-dried agricultural cubes cultivated in Merced, California. Our 9-year real-time evaluation tracks the molecular integrity of active curcuminoids, providing the life sciences industry with a validated protocol for structural preservation.
+Following nearly eight years of documented metabolic stasis under standard ambient storage conditions (`STORAGE_PROTOCOL.md`), viable meristematic tissue within the 2018 sun-dried agricultural cubes initiated active bud break and resprouting on **January 12, 2026**. 
 
-### 📊 Structural Matrix & Metadata
-* **Cultivation Locale:** Merced, California, USA
-* **Harvest Vintage:** 2018
-* **Testing Methodology:** LC-MS-MS / GC-MS-MS Multi-Residue Screen
-* **Target Compounds:** Curcumin, Demethoxycurcumin, Bisdemethoxycurcumin
+This event provides empirical evidence that the solar-dehydration and preservation protocol maintained cellular viability and enzymatic potential far beyond standard commercial shelf-life baselines.
 
 ---
 
-## 🚀 Repository Architecture
+## 📅 Chronological Observation Log
 
-The project is structured to enforce separation between analytical documentation, strict schema blueprints, and core PyTorch operational scripts:
-
-* **`src/model.py`**: Neural network architecture featuring non-linear Swish and Leaky ReLU activations tailored to complex agricultural matrices.
-* **`src/train.py`**: Optimization pipeline running AdamW and Huber Loss, incorporating mathematical layer-locking to safeguard historical ginger stasis controls.
-* **`ai-learning-thoughts.md`**: Core engineering notes covering transfer learning mechanics, model convergence curves, and regularization targets.
-* **`extraction-protocol.md`**: Compliance framework documenting solvent ratios and ultrasonic preparation parameters to ensure audit readiness.
-* **`hplc-analytical-framework.md`**: Standardized data ingestion schemas optimized to process raw quantitative data from external Reversed-Phase C18 chromatography equipment.
-
----
-
-## 📊 Analytical Core Features
-
-### 1. Mathematical Baseline Continuity
-To preserve the 8-year noise-free stasis variables, deep model layers are structurally frozen (`requires_grad = False`). This ensures that highly volatile seasonal environmental factors from field collections cannot distort or wash away established biological parameters.
-
-### 2. Pharmaceutical Integration Layer
-The data schema is optimized to map absolute quantification vectors from target curcuminoid peaks directly into the tensor training loop:
-
-```text
-[Sample_ID] -> [Moisture_Content_%] -> [Peak_Area_C1] -> [Peak_Area_C2] -> [Peak_Area_C3] -> [Predicted_Stasis_Ratio]
-```
+| Date | Days Post-Break | Morphological Observation | Environmental / Hydration Notes |
+| :--- | :--- | :--- | :--- |
+| **2026-01-12** | Day 0 | Initial lateral bud swelling and apical meristem emergence observed on 2018 vintage cubes. | Ambient indoor conditions; break from 8-year dry stasis. |
+| **2026-02-15** | Day 34 | Primary shoot elongation and early adventitious root node development. | *[Add moisture/substrate notes]* |
+| **2026-05-01** | Day 109 | *[Add leaf unfurling / shoot height milestones]* | *[Add light/temperature notes]* |
+| **2026-08-15** | Day 215 | *[Add summer rhizome expansion / vigor notes]* | *[Add environmental notes]* |
+| **2026-11-25** | Day 317 | Ongoing vegetative activity confirmed at 10+ months post-stasis break. | *[Add current status/photo link]* |
 
 ---
 
-## 🛠️ Local Environment Initialization
+## 📸 Photographic & Tensor Integration Notes
 
-Install the required core dependencies to compile the model layout locally:
-
-```bash
-pip install -r requirements.txt
-python3 src/train.py
-```
-
----
-
-## 🤝 Strategic Collaboration & Licensing
-
-As an independent **Biotechnology R&D Consultation** firm, we leverage this 9-year dataset to provide high-level, human-driven insights and proprietary protocols for:
-
-* **Biopharma R&D Teams:** Real-time stability alternatives to accelerated shelf-life simulation models.
-* **Product Formulators:** High-yield botanical feedstocks that minimize active compound degradation.
-* **Legal and Regulatory Teams:** Defensible empirical data to anchor patent and shelf-life claims.
-
-For technical inquiries or data licensing access, please open an issue or contact our advisory team directly.
-
+* **Visual Evidence:** Store timestamped progression photos in `/docs/images/resprouting-2026/` and link below.
+* **Model Implications (`src/train.py`):** Samples exhibiting post-stasis germination should be flagged in `verified-data-2026.json` (`"viability_status": "RESPROUTED_2026"`) so metabolic reactivation variables do not skew baseline dry-stasis regression weights.
